@@ -7,19 +7,30 @@ import logo from '../assets/logo-wh-bl-2.webp';
 
 <Layout title='Web Developer - Jerry_Wski - Tworzenie Stron WWW'>
   <header>
-    <Image class='logo-img' src={logo} alt='logo-image' loading={'eager'} />
-    <Navbar client:only />
+    <Image class='logo-img' src={logo} alt='logo' loading={'eager'} />
+    <Navbar />
   </header>
-  <main>
-    <h1>Hi</h1>
-  </main>
+  <main></main>
 </Layout>
 
 <style>
-	.logo-img {
-		object-fit: contain;
-		width: 100%;
-		max-width: 100px;
-		height: auto;
-	}
+  header {
+    height: 600px;
+    background-image: radial-gradient(
+      circle,
+      #15151a,
+      #131115,
+      #0f0c0f,
+      #080607,
+      #000000
+    );
+  }
+  .logo-img {
+    object-fit: contain;
+    width: 100%;
+    max-width: 150px;
+    height: auto;
+    margin-left: 140px;
+    padding-top: 20px;
+  }
 </style>
