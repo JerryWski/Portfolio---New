@@ -1,13 +1,25 @@
 ---
+import Navbar from '../components/Nav/Navbar';
 import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import logo from '../assets/logo-wh-bl-2.webp';
 ---
 
-<Layout title="Web Developer - Jerry_Wski - Tworzenie Stron WWW">
-	<main>
-		<h1>Hi</h1>
-	</main>
+<Layout title='Web Developer - Jerry_Wski - Tworzenie Stron WWW'>
+  <header>
+    <Image class='logo-img' src={logo} alt='logo-image' loading={'eager'} />
+    <Navbar client:only />
+  </header>
+  <main>
+    <h1>Hi</h1>
+  </main>
 </Layout>
 
 <style>
-	
+	.logo-img {
+		object-fit: contain;
+		width: 100%;
+		max-width: 100px;
+		height: auto;
+	}
 </style>
