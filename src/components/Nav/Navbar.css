@@ -5,13 +5,26 @@
     margin-top: -60px;
 }
 .nav-list {
-    background-color: var(--bg-graff);
+    /* background-color: var(--bg-graff); */
     padding: 10px 80px;
     border-radius: 7px;
-    border: 1px solid rgb(69, 69, 70);
+    border: 1px solid rgb(48, 48, 49);
     list-style: none;
-    display: flex;
+    display: none;
     gap: 60px;
 }
 .nav-list_item {
+    font-family: var(--second-font);
+    font-weight: 600;
+    text-transform: uppercase;
+}
+.nav-list_item a {
+    text-decoration: none;
+    color: inherit;
+}
+@media (min-width:800px) {
+    .desktop {
+        display: flex;
+        margin-top: 60px;
+    }
 }

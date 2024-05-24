@@ -24,8 +24,11 @@ const { title = 'Web Developer - Jerry_Wski - Tworzenie Stron WWW' } =
 <style is:global>
   :root {
     --wh: hsl(0, 0%, 100%);
-	--bg-black: rgb(5, 5, 5);
-	--bg-graff: rgb(26, 28, 32);
+    --bg-black: rgb(5, 5, 5);
+    --bg-graff: rgb(26, 28, 32);
+    --green: hsl(146, 70%, 39%);
+    --main-font: "Orbitron", 'sans-serif';
+    --second-font: 'Anonymous Pro', 'sans-serif';
   }
   *,
   *::after,
@@ -36,11 +39,12 @@ const { title = 'Web Developer - Jerry_Wski - Tworzenie Stron WWW' } =
   }
   html {
     color: var(--wh);
-	background-color: var(--bg-black);
-	scroll-behavior: smooth;
+    background-color: var(--bg-black);
+    scroll-behavior: smooth;
+    
   }
   body {
-	min-height: 100vh;
+    min-height: 100vh;
   }
   .sticky-body {
     overflow: hidden;

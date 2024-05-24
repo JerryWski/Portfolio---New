@@ -1,0 +1,89 @@
+/* orbitron fonts */
+@font-face {
+  font-family: 'Orbitron';
+  src: url('Orbitron-Medium.eot');
+  src: local('Orbitron Medium'), local('Orbitron-Medium'),
+    url('/fonts/Orbitron-Medium.woff2') format('woff2'),
+    url('/fonts/Orbitron-Medium.woff') format('woff');
+
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Orbitron';
+  src: url('Orbitron-Black.eot');
+  src: local('Orbitron Black'), local('Orbitron-Black'),
+    url('/fonts/Orbitron-Black.woff2') format('woff2'),
+    url('/fonts/Orbitron-Black.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Orbitron';
+  src: url('Orbitron-Bold.eot');
+  src: local('Orbitron Bold'), local('Orbitron-Bold'),
+    url('/fonts/Orbitron-Bold.woff2') format('woff2'),
+    url('/fonts/Orbitron-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Orbitron';
+  src: url('Orbitron-Regular.eot');
+  src: local('Orbitron Regular'), local('Orbitron-Regular'),
+    url('/fonts/Orbitron-Regular.woff2') format('woff2'),
+    url('/fonts/Orbitron-Regular.woff') format('woff');
+  font-weight: normal;
+  font-display: swap;
+  font-style: normal;
+}
+/* anonymous pro fonts */
+@font-face {
+  font-family: 'Anonymous Pro';
+  src: url('AnonymousPro-Italic.eot');
+  src: local('Anonymous Pro Italic'), local('AnonymousPro-Italic'),
+    url('/fonts/AnonymousPro-Italic.woff2') format('woff2'),
+    url('/fonts/AnonymousPro-Italic.woff') format('woff');
+  font-weight: normal;
+  font-display: swap;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Anonymous Pro';
+  src: url('AnonymousPro-Regular.eot');
+  src: local('Anonymous Pro Regular'), local('AnonymousPro-Regular'),
+    url('/fonts/AnonymousPro-Regular.woff2') format('woff2'),
+    url('/fonts/AnonymousPro-Regular.woff') format('woff');
+  font-weight: normal;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Anonymous Pro';
+  src: url('AnonymousPro-BoldItalic.eot');
+  src: local('Anonymous Pro Bold Italic'), local('AnonymousPro-BoldItalic'),
+    url('/fonts/AnonymousPro-BoldItalic.woff2') format('woff2'),
+    url('/fonts/AnonymousPro-BoldItalic.woff') format('woff');
+  font-weight: bold;
+  font-display: swap;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Anonymous Pro';
+  src: url('AnonymousPro-Bold.eot');
+  src: local('Anonymous Pro Bold'), local('AnonymousPro-Bold'),
+    url('/fonts/AnonymousPro-Bold.woff2') format('woff2'),
+    url('/fonts/AnonymousPro-Bold.woff') format('woff');
+  font-weight: bold;
+  font-display: swap;
+  font-style: normal;
+}

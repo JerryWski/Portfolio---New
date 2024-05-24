@@ -2,12 +2,14 @@
 import Navbar from '../components/Nav/Navbar';
 import Layout from '../layouts/Layout.astro';
 import { Image } from 'astro:assets';
-import logo from '../assets/logo-wh-bl-2.webp';
+import logo from '../assets/my-logo.png';
+import logo2 from '../assets/logo-wh-2.webp';
 ---
 
 <Layout title='Web Developer - Jerry_Wski - Tworzenie Stron WWW'>
   <header>
-    <Image class='logo-img' src={logo} alt='logo' loading={'eager'} />
+    <Image class='logo-img desk' src={logo} alt='logo' loading={'eager'} />
+    <Image class='logo-img mobile' src={logo2} alt='logo' loading={'eager'} />
     <Navbar />
   </header>
   <main></main>
@@ -16,21 +18,29 @@ import logo from '../assets/logo-wh-bl-2.webp';
 <style>
   header {
     height: 600px;
-    background-image: radial-gradient(
-      circle,
-      #15151a,
-      #131115,
-      #0f0c0f,
-      #080607,
-      #000000
-    );
+    background-color: var(--bg-graff);
   }
   .logo-img {
     object-fit: contain;
     width: 100%;
-    max-width: 150px;
     height: auto;
-    margin-left: 140px;
-    padding-top: 20px;
+  }
+  .logo-img.mobile {
+    max-width: 60px;
+    margin: 20px;
+  }
+  .logo-img.desk {
+    display: none;
+  }
+  @media (min-width: 800px) {
+    .logo-img.desk {
+      display: block;
+      margin-left: 140px;
+      max-width: 340px;
+      padding-top: 20px;
+    }
+    .logo-img.mobile {
+      display: none;
+    }
   }
 </style>
