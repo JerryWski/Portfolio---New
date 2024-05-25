@@ -1,7 +1,8 @@
 .nav-container {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
+    position: relative;
     margin-top: -60px;
 }
 .nav-list {
@@ -13,6 +14,16 @@
     display: none;
     gap: 60px;
 }
+.mobile {
+    position: absolute;
+    right: 0;
+    top: 54px;
+    display: none;
+    flex-direction: column;
+    border: none;
+    border-radius: 0;
+    background-color: var(--wh);
+}
 .nav-list_item {
     font-family: var(--second-font);
     font-weight: 600;
@@ -23,8 +34,18 @@
     color: inherit;
 }
 @media (min-width:800px) {
+    .nav-container {
+        justify-content: center;
+    }
     .desktop {
         display: flex;
         margin-top: 60px;
+    }
+    .mobile {
+        display: none;
+    }
+    li.nav-list_item:nth-child(4) {
+        margin-left: 100px;
+        color: rgb(255, 230, 0);
     }
 }

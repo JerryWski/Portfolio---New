@@ -8,26 +8,42 @@ import logo2 from '../assets/logo-wh-2.webp';
 
 <Layout title='Web Developer - Jerry_Wski - Tworzenie Stron WWW'>
   <header>
-    <Image class='logo-img desk' src={logo} alt='logo' loading={'eager'} />
-    <Image class='logo-img mobile' src={logo2} alt='logo' loading={'eager'} />
-    <Navbar />
+    <div class='header-wrapper'>
+      <Image class='logo-img desk' src={logo} alt='logo' loading={'eager'} />
+      <Image class='logo-img small' src={logo2} alt='logo' loading={'eager'} />
+      <Navbar client:only='react'/>
+    </div>
   </header>
   <main></main>
 </Layout>
 
 <style>
   header {
-    height: 600px;
+    height: 80px;
     background-color: var(--bg-graff);
   }
+  /* .header-wrapper {
+    position: relative;
+  }
+  .header-wrapper::after {
+    position: absolute;
+    content: '';
+    top: -193%;
+    height: 570%;
+    width: 50%;
+    left: 25%;
+    background: linear-gradient(352.23deg, #fff 0%, #fdfffd0a 100%);
+    -webkit-mask-image: radial-gradient(rgba(0, 0, 0, 0.7), transparent 70%);
+    mask-image: radial-gradient(rgba(0, 0, 0, 0.1), transparent 53%);
+  } */
   .logo-img {
     object-fit: contain;
     width: 100%;
     height: auto;
   }
-  .logo-img.mobile {
-    max-width: 60px;
-    margin: 20px;
+  .logo-img.small {
+    max-width: 80px;
+    padding: 10px;
   }
   .logo-img.desk {
     display: none;
@@ -39,7 +55,7 @@ import logo2 from '../assets/logo-wh-2.webp';
       max-width: 340px;
       padding-top: 20px;
     }
-    .logo-img.mobile {
+    .logo-img.small {
       display: none;
     }
   }
