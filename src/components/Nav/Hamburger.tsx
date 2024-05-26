@@ -1,13 +1,17 @@
 import { useState } from 'react';
 import './Hamburger.css';
 
-const Hamburger = () => {
-  const [isActive, setIsActive] = useState(false);
+interface HamburgerProps {
+  isActive: boolean,
+  animateBurger: () => void;
+}
 
-  const animateBurger = () => {
-    setIsActive((prev) => !prev);
-  };
+const Hamburger: React.FC<HamburgerProps> = ({ isActive, animateBurger }) => {
+  // const [isActive, setIsActive] = useState(false);
 
+  // const animateBurger = () => {
+  //   setIsActive((prev) => !prev);
+  // };
   return (
     <button
       onClick={animateBurger}

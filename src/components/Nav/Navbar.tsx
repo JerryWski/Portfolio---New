@@ -1,11 +1,17 @@
+import { useState } from 'react';
 import Hamburger from './Hamburger';
 import './Navbar.css';
 
-const Navbar = () => {
+const Navbar: React.FC = () => {
+  const [isActive, setIsActive] = useState(false);
+
+  const animateBurger = () => {
+    setIsActive((prev) => !prev);
+  };
   return (
     <>
       <nav className='nav-container'>
-        <Hamburger />
+        <Hamburger isActive={isActive} animateBurger={animateBurger}/>
         <ul className='nav-list desktop'>
           <li className='nav-list_item'>
             <a href='/'>_o mnie</a>
@@ -20,7 +26,7 @@ const Navbar = () => {
             <a href='/'>_kontakt</a>
           </li>
         </ul>
-        <ul className='nav-list mobile'>
+        <ul className={`nav-list mobile ${isActive ? 'is-active' : ''}`}>
           <li className='nav-list_item'>
             <a href='/'>_o mnie</a>
           </li>

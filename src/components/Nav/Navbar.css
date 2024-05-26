@@ -17,12 +17,20 @@
 .mobile {
     position: absolute;
     right: 0;
-    top: 54px;
+    top: 55px;
+    height: 60vh;
     display: none;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--grey-font);
     border: none;
+    z-index: 999;
     border-radius: 0;
     background-color: var(--wh);
+}
+.nav-list.mobile.is-active {
+    display: flex;
 }
 .nav-list_item {
     font-family: var(--second-font);
