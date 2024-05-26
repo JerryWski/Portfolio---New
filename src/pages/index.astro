@@ -4,6 +4,7 @@ import Layout from '../layouts/Layout.astro';
 import { Image } from 'astro:assets';
 import logo from '../assets/my-logo.png';
 import logo2 from '../assets/logo-wh-2.webp';
+import HeroSection from '../components/Hero/HeroSection.astro';
 ---
 
 <Layout title='Web Developer - Jerry_Wski - Tworzenie Stron WWW'>
@@ -14,7 +15,9 @@ import logo2 from '../assets/logo-wh-2.webp';
       <Navbar client:only='react'/>
     </div>
   </header>
-  <main></main>
+  <main>
+    <HeroSection />
+  </main>
 </Layout>
 
 <style>
@@ -48,7 +51,7 @@ import logo2 from '../assets/logo-wh-2.webp';
   .logo-img.desk {
     display: none;
   }
-  @media (min-width: 800px) {
+  @media (min-width: 900px) {
     .logo-img.desk {
       display: block;
       margin-left: 140px;
