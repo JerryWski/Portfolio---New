@@ -4,6 +4,7 @@
     align-items: center;
     position: relative;
     margin-top: -60px;
+    
 }
 .nav-list {
     /* background-color: var(--bg-graff); */
@@ -47,6 +48,7 @@
 @media (min-width:900px) {
     .nav-container {
         justify-content: center;
+        margin-top: -40px;
     }
     .desktop {
         display: flex;

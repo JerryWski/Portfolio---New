@@ -22,23 +22,9 @@ import HeroSection from '../components/Hero/HeroSection.astro';
 
 <style>
   header {
-    height: 80px;
     background-color: var(--bg-graff);
+    height: 80px;
   }
-  /* .header-wrapper {
-    position: relative;
-  }
-  .header-wrapper::after {
-    position: absolute;
-    content: '';
-    top: -193%;
-    height: 570%;
-    width: 50%;
-    left: 25%;
-    background: linear-gradient(352.23deg, #fff 0%, #fdfffd0a 100%);
-    -webkit-mask-image: radial-gradient(rgba(0, 0, 0, 0.7), transparent 70%);
-    mask-image: radial-gradient(rgba(0, 0, 0, 0.1), transparent 53%);
-  } */
   .logo-img {
     object-fit: contain;
     width: 100%;
@@ -52,6 +38,10 @@ import HeroSection from '../components/Hero/HeroSection.astro';
     display: none;
   }
   @media (min-width: 900px) {
+    header {
+      height: 120px;
+    }
+
     .logo-img.desk {
       display: block;
       margin-left: 140px;

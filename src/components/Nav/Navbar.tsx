@@ -10,12 +10,12 @@ const Navbar: React.FC = () => {
     setIsActive((prev) => !prev);
   };
 
-removeSideBar(() => setIsActive(false))
- 
+  removeSideBar(() => setIsActive(false));
+
   return (
     <>
       <nav className='nav-container'>
-        <Hamburger isActive={isActive} animateBurger={animateBurger}/>
+        <Hamburger isActive={isActive} animateBurger={animateBurger} />
         <ul className='nav-list desktop'>
           <li className='nav-list_item'>
             <a href='/'>_o mnie</a>
@@ -31,7 +31,7 @@ removeSideBar(() => setIsActive(false))
           </li>
         </ul>
         <ul className={`nav-list mobile ${isActive ? 'is-active' : ''}`}>
-        <li className='nav-list_item'>
+          <li className='nav-list_item'>
             <a href='/'>Home</a>
           </li>
           <li className='nav-list_item'>
