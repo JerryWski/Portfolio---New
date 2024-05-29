@@ -4,15 +4,17 @@
 
 <section class='hero-section'>
   <div class='wrapper'>
-    <h1 class='hero-heading'>
-      Hi, I'm
-      <span>Jarek</span>
-      Web Developer
-    </h1>
-    <p class='hero-subheading'>
-      Passionate about coding beautiful things, I love my work. Let's
-      collaborate and create something amazing!
-    </p>
+    <div class="hero-container">
+      <h1 class='hero-heading'>
+        Hi, I'm
+        <span>Jarek</span>
+        Web Developer
+      </h1>
+      <p class='hero-subheading'>
+        Passionate about coding beautiful things, I love my work. Let's
+        collaborate and create something amazing!
+      </p>
+    </div>
     <div class='hero-image--wrapper'>
       <img class='hero-image' src='/me.webp' alt='man-selfie' />
     </div>
@@ -105,14 +107,14 @@
   .hero-image--wrapper::after {
     content: '';
     position: absolute;
-    bottom: -15px;
+    bottom: -26px;
     left: -40px;
     z-index: 1;
     width: 50%;
     height: 50%;
-    border-left: 42px solid var(--green); /* Zielony border */
-    border-bottom: 32px solid var(--green); /* Zielony border */
-    box-sizing: border-box; /* Upewnia się, że border jest wliczony w wymiary */
+    border-left: 42px solid var(--grey-font);
+    border-bottom: 32px solid var(--green);
+    box-sizing: border-box;
   }
 
   @media (min-width: 900px) {
@@ -129,7 +131,7 @@
       );
     }
   }
-  @media (max-width: 560px) {
+  @media (max-width: 674px) {
     .wrapper {
       flex-wrap: wrap;
     }
