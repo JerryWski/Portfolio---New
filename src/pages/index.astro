@@ -12,7 +12,7 @@ import HeroSection from '../components/Hero/HeroSection.astro';
     <div class='header-wrapper'>
       <Image class='logo-img desk' src={logo} alt='logo' loading={'eager'} />
       <Image class='logo-img small' src={logo2} alt='logo' loading={'eager'} />
-      <Navbar client:only='react'/>
+      <Navbar client:only='react' />
     </div>
   </header>
   <main>
@@ -23,7 +23,8 @@ import HeroSection from '../components/Hero/HeroSection.astro';
 <style>
   header {
     background-color: var(--bg-graff);
-    height: 80px;
+    height: 90px;
+    padding-top: 10px;
   }
   .logo-img {
     object-fit: contain;

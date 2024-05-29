@@ -2,20 +2,34 @@
 
 ---
 
-<section>
-  <h1>Siema jestem deweloper</h1>
+<section class='hero-section'>
+  <div class='wrapper'>
+    <h1 class='hero-heading'>
+      Hi, I'm
+      <span>Jarek</span>
+      Web Developer
+    </h1>
+    <p class='hero-subheading'>
+      Passionate about coding beautiful things, I love my work. Let's
+      collaborate and create something amazing!
+    </p>
+    <div class='hero-image--wrapper'>
+      <img class='hero-image' src='/me2.webp' alt='man-selfie' />
+    </div>
+  </div>
 </section>
 
 <style>
-  section {
+  .hero-section {
+    padding: 10px;
     height: 100vh;
     max-width: 1440px;
     margin: 0 auto;
     background-color: var(--bg-graff);
     position: relative;
   }
-  section::after,
-  section::before {
+  .hero-section::after,
+  .hero-section::before {
     content: '';
     position: absolute;
     background-image: url('/hero-bg2.webp');
@@ -25,6 +39,7 @@
     width: 100%;
     transform: scaleX(-1);
     height: 100%;
+    z-index: 0;
     opacity: 0.2;
     -webkit-mask-image: linear-gradient(
       to bottom,
@@ -38,35 +53,70 @@
       #1a1c20 15%,
       transparent
     );
-    top: 0px;
+    top: 80px;
     left: 0;
   }
-  section::before {
+  .hero-section::before {
     background-image: url('/wheels.webp');
-    animation: glow 8s ease infinite forwards;
+    animation: glow 6s ease-out infinite both;
     opacity: 0;
   }
-
-  @keyframes glow {
-    0% {
-      opacity: 0;
-    }
-    25%{
-        opacity: .3;
-    }
-    50% {
-      opacity: 0.4;
-    }
-    75%{
-        opacity: .3;
-    }
-    100% {
-      opacity: 0.2;
-    }
+  .wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  .hero-heading {
+    font-family: var(--main-font);
+    font-weight: 900;
+    z-index: 1;
+    position: relative;
+    font-size: 3.5rem;
+    padding-top: 40px;
+    text-wrap: balance;
+    line-height: 62px;
+  }
+  .hero-heading span {
+    color: var(--green);
+  }
+  .hero-subheading {
+    color: var(--wh);
+    font-weight: 600;
+    text-wrap: balance;
+    position: relative;
+    z-index: 1;
+    font-family: var(--second-font);
+  }
+  .hero-image--wrapper {
+    max-width: 250px;
+    position: relative;
+    margin-top: 20px;
+  }
+  .hero-image {
+    position: relative;
+    z-index: 2;
+    height: auto;
+    border-radius: 7px;
+    border-bottom-left-radius: 0px;
+    width: 100%;
+    object-fit: contain;
+  }
+  .hero-image--wrapper::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: -40px;
+    z-index: 1;
+    width: 50%;
+    height: 50%;
+    border-left: 42px solid var(--green); /* Zielony border */
+    border-bottom: 32px solid var(--green); /* Zielony border */
+    box-sizing: border-box; /* Upewnia się, że border jest wliczony w wymiary */
   }
 
   @media (min-width: 900px) {
-    section {
+    .hero-section {
       mask-image: radial-gradient(
         circle,
         rgba(0, 0, 0, 1) 70%,
@@ -77,6 +127,28 @@
         rgba(0, 0, 0, 1) 90%,
         rgba(199, 146, 146, 0) 100%
       );
+    }
+  }
+  @media (max-width: 560px) {
+    .wrapper {
+      flex-wrap: wrap;
+    }
+  }
+  @keyframes glow {
+    0% {
+      opacity: 0;
+    }
+    25% {
+      opacity: 0.3;
+    }
+    50% {
+      opacity: 0.5;
+    }
+    75% {
+      opacity: 0.3;
+    }
+    100% {
+      opacity: 0.2;
     }
   }
 </style>
