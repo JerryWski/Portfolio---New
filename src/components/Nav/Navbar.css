@@ -8,7 +8,7 @@
 }
 .nav-list {
     /* background-color: var(--bg-graff); */
-    padding: 10px 80px;
+    padding: 10px 60px;
     border-radius: 7px;
     border: 1px solid rgb(48, 48, 49);
     list-style: none;
@@ -29,7 +29,6 @@
     align-items: flex-end;
     padding: 30px 40px;
     color: var(--grey-font);
-    
     z-index: 999;
     border-radius: 0;
     background-color: rgb(243, 246, 239,.8);
@@ -41,6 +40,7 @@
 .nav-list_item {
     font-family: var(--second-font);
     font-weight: 600;
+    white-space: nowrap;
     text-transform: uppercase;
 }
 .nav-list_item a {
@@ -55,12 +55,13 @@
     .desktop {
         display: flex;
         margin-top: 60px;
+        margin-right: 20px;
     }
     .mobile {
         display: none;
     }
     li.nav-list_item:nth-child(4) {
-        margin-left: 100px;
+        margin-left: 60px;
         color: rgb(255, 230, 0);
     }
 }

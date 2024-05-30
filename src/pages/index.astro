@@ -41,11 +41,17 @@ import HeroSection from '../components/Hero/HeroSection.astro';
   @media (min-width: 900px) {
     header {
       height: 120px;
+      padding-top: 0px;
     }
-
+.header-wrapper {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 20px;
+}
     .logo-img.desk {
       display: block;
-      margin-left: 140px;
+      margin-left: 40px;
       max-width: 340px;
       padding-top: 20px;
     }
