@@ -16,6 +16,7 @@ import Button from '../../utils/Button.astro';
         Passionate about coding beautiful things, I love my work. Let's
         collaborate and create something amazing!
       </p>
+      <Button />
     </div>
     <div class='hero-image--wrapper'>
       <Image
@@ -25,8 +26,12 @@ import Button from '../../utils/Button.astro';
         loading={'eager'}
       />
     </div>
-    <Button />
   </div>
+  <button class='btn-hero'
+    ><a class='btn-hero--link' aria-label='link to contact list' href='/'
+      >Hire me</a
+    >
+  </button>
 </section>
 
 <style>
@@ -77,6 +82,24 @@ import Button from '../../utils/Button.astro';
     align-items: flex-start;
     gap: 20px;
   }
+  .btn-hero {
+    display: block;
+    margin: 100px auto;
+    position: relative;
+    width: 78%;
+    z-index: 2;
+    cursor: pointer;
+    padding: 10px 40px;
+    border-radius: 15px;
+    background-color: var(--green);
+    border: none;
+  }
+  .btn-hero--link {
+    text-decoration: none;
+    font-family: var(--second-font);
+    font-size: 1.5rem;
+    color: var(--bg-black);
+  }
   .hero-heading {
     font-family: var(--main-font);
     font-weight: 900;
@@ -116,18 +139,18 @@ import Button from '../../utils/Button.astro';
   .hero-image--wrapper::after {
     content: '';
     position: absolute;
-    bottom: -27px;
+    bottom: -25px;
     left: -40px;
     z-index: 1;
     width: 50%;
     height: 50%;
-    border-left: 42px solid var(--grey-font);
-    border-bottom: 32px solid var(--green);
+    border-left: 22px solid var(--grey-font);
+    border-bottom: 22px solid var(--green);
     box-sizing: border-box;
   }
   .hero-image--wrapper::before {
-    border-right: 42px solid var(--grey-font);
-    border-top: 32px solid var(--green);
+    border-right: 22px solid var(--grey-font);
+    border-top: 22px solid var(--green);
     content: '';
     position: absolute;
     z-index: 1;
@@ -157,6 +180,9 @@ import Button from '../../utils/Button.astro';
     }
     .hero-container {
       max-width: 60%;
+    }
+    .btn-hero {
+      display: none;
     }
     .hero-heading {
       font-size: 5rem;
