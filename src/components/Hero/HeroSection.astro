@@ -1,4 +1,6 @@
 ---
+import { Image } from "astro:assets"
+import mephoto from '../../../public/me.webp'
 
 ---
 
@@ -16,7 +18,7 @@
       </p>
     </div>
     <div class='hero-image--wrapper'>
-      <img class='hero-image' src='/me.webp' alt='man-selfie' />
+      <Image class='hero-image' src={mephoto} alt='man-selfie' loading="eager" />
     </div>
   </div>
 </section>
@@ -52,7 +54,7 @@
     mask-image: linear-gradient(
       to bottom,
       transparent 1%,
-      #1a1c20 15%,
+      #256435 15%,
       transparent
     );
     top: 80px;

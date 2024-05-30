@@ -18,16 +18,16 @@ const Navbar: React.FC = () => {
         <Hamburger isActive={isActive} animateBurger={animateBurger} />
         <ul className='nav-list desktop'>
           <li className='nav-list_item'>
-            <a href='/'>_o mnie</a>
+            <a href='/'>_about</a>
           </li>
           <li className='nav-list_item'>
             <a href='/'>_skills</a>
           </li>
           <li className='nav-list_item'>
-            <a href='/'>_projekty</a>
+            <a href='/'>_projects</a>
           </li>
           <li className='nav-list_item'>
-            <a href='/'>_kontakt</a>
+            <a href='/'>_hire me</a>
           </li>
         </ul>
         <ul className={`nav-list mobile ${isActive ? 'is-active' : ''}`}>
@@ -44,7 +44,7 @@ const Navbar: React.FC = () => {
             <a href='/'>_projects</a>
           </li>
           <li className='nav-list_item'>
-            <a href='/'>_contact me</a>
+            <a href='/'>_hire me</a>
           </li>
         </ul>
       </nav>
