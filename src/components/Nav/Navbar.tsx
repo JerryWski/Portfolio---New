@@ -27,7 +27,7 @@ const Navbar: React.FC = () => {
             <a href='/'>_projects</a>
           </li>
           <li className='nav-list_item'>
-            <a href='/'>_hire me</a>
+            <a href='/'>_contact</a>
           </li>
         </ul>
         <ul className={`nav-list mobile ${isActive ? 'is-active' : ''}`}>
@@ -44,7 +44,7 @@ const Navbar: React.FC = () => {
             <a href='/'>_projects</a>
           </li>
           <li className='nav-list_item'>
-            <a href='/'>_hire me</a>
+            <a href='/'>_contact</a>
           </li>
         </ul>
       </nav>

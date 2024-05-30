@@ -1,12 +1,12 @@
 ---
-import { Image } from "astro:assets"
-import mephoto from '../../../public/me.webp'
-
+import { Image } from 'astro:assets';
+import mephoto from '../../../public/me.webp';
+import Button from '../../utils/Button.astro';
 ---
 
 <section class='hero-section'>
   <div class='wrapper'>
-    <div class="hero-container">
+    <div class='hero-container'>
       <h1 class='hero-heading'>
         Hi, I'm
         <span>Jarek</span>
@@ -18,14 +18,20 @@ import mephoto from '../../../public/me.webp'
       </p>
     </div>
     <div class='hero-image--wrapper'>
-      <Image class='hero-image' src={mephoto} alt='man-selfie' loading={'eager'}/>
+      <Image
+        class='hero-image'
+        src={mephoto}
+        alt='man-selfie'
+        loading={'eager'}
+      />
     </div>
+    <Button />
   </div>
 </section>
 
 <style>
   .hero-section {
-    padding: 10px;
+    padding: 20px;
     height: 100vh;
     max-width: 1440px;
     margin: 0 auto;
@@ -76,7 +82,7 @@ import mephoto from '../../../public/me.webp'
     font-weight: 900;
     z-index: 1;
     position: relative;
-    font-size: 3.5rem;
+    font-size: 3rem;
     padding-top: 40px;
     text-wrap: balance;
     line-height: 62px;
@@ -93,9 +99,9 @@ import mephoto from '../../../public/me.webp'
     font-family: var(--second-font);
   }
   .hero-image--wrapper {
-    max-width: 250px;
+    max-width: 200px;
     position: relative;
-    margin-top: 20px;
+    margin-top: 40px;
   }
   .hero-image {
     position: relative;
@@ -103,19 +109,32 @@ import mephoto from '../../../public/me.webp'
     height: auto;
     border-radius: 7px;
     border-bottom-left-radius: 0px;
+    border-top-right-radius: 0px;
     width: 100%;
     object-fit: contain;
   }
   .hero-image--wrapper::after {
     content: '';
     position: absolute;
-    bottom: -26px;
+    bottom: -27px;
     left: -40px;
     z-index: 1;
     width: 50%;
     height: 50%;
     border-left: 42px solid var(--grey-font);
     border-bottom: 32px solid var(--green);
+    box-sizing: border-box;
+  }
+  .hero-image--wrapper::before {
+    border-right: 42px solid var(--grey-font);
+    border-top: 32px solid var(--green);
+    content: '';
+    position: absolute;
+    z-index: 1;
+    width: 50%;
+    height: 50%;
+    top: -31px;
+    right: -40px;
     box-sizing: border-box;
   }
 
@@ -133,9 +152,23 @@ import mephoto from '../../../public/me.webp'
       );
     }
     .hero-section::after,
-  .hero-section::before {
-    top: 40px;
-  }
+    .hero-section::before {
+      top: 40px;
+    }
+    .hero-container {
+      max-width: 60%;
+    }
+    .hero-heading {
+      font-size: 5rem;
+      line-height: normal;
+    }
+    .hero-subheading {
+      font-size: 1.5rem;
+    }
+    .hero-image--wrapper {
+      max-width: 300px;
+      margin-top: 80px;
+    }
   }
   @media (max-width: 674px) {
     .wrapper {
@@ -144,16 +177,16 @@ import mephoto from '../../../public/me.webp'
   }
   @keyframes glow {
     0% {
-      opacity: 0;
+      opacity: 0.2;
     }
     25% {
-      opacity: 0.3;
-    }
-    50% {
       opacity: 0.5;
     }
+    50% {
+      opacity: 0.8;
+    }
     75% {
-      opacity: 0.3;
+      opacity: 0.5;
     }
     100% {
       opacity: 0.2;
