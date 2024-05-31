@@ -32,12 +32,13 @@ import Button from '../../utils/Button.astro';
       >Hire me</a
     >
   </button>
+  <div class="hero-line"></div>
 </section>
 
 <style>
   .hero-section {
     padding: 20px;
-    height: 100vh;
+    /* height: 100vh; */
     max-width: 1440px;
     margin: 0 auto;
     background-color: var(--bg-graff);
@@ -55,7 +56,7 @@ import Button from '../../utils/Button.astro';
     transform: scaleX(-1);
     height: 100%;
     z-index: 0;
-    opacity: 0.2;
+    opacity: 0.1;
     -webkit-mask-image: linear-gradient(
       to bottom,
       transparent 1%,
@@ -80,19 +81,24 @@ import Button from '../../utils/Button.astro';
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    gap: 20px;
+    gap: 10px;
   }
   .btn-hero {
     display: block;
-    margin: 100px auto;
+    margin: 100px auto 40px auto;
     position: relative;
     width: 78%;
     z-index: 2;
+    font-weight: 900;
     cursor: pointer;
     padding: 10px 40px;
     border-radius: 15px;
     background-color: var(--green);
     border: none;
+    transition: .3s background-color ease-in-out;
+  }
+  .btn-hero:hover {
+    background-color: var(--wh);
   }
   .btn-hero--link {
     text-decoration: none;
@@ -107,6 +113,7 @@ import Button from '../../utils/Button.astro';
     position: relative;
     font-size: 3rem;
     padding-top: 40px;
+    max-width: 400px;
     text-wrap: balance;
     line-height: 62px;
   }
@@ -116,7 +123,8 @@ import Button from '../../utils/Button.astro';
   .hero-subheading {
     color: var(--wh);
     font-weight: 600;
-    text-wrap: balance;
+    /* text-wrap: balance; */
+    max-width: 380px;
     margin-top: 20px;
     position: relative;
     z-index: 1;
@@ -135,13 +143,14 @@ import Button from '../../utils/Button.astro';
     border-bottom-left-radius: 0px;
     border-top-right-radius: 0px;
     width: 100%;
+    overflow: hidden;
     object-fit: contain;
   }
   .hero-image--wrapper::after {
     content: '';
     position: absolute;
-    bottom: -25px;
-    left: -40px;
+    bottom: -16px;
+    left: -20px;
     z-index: 1;
     width: 50%;
     height: 50%;
@@ -154,12 +163,17 @@ import Button from '../../utils/Button.astro';
     border-top: 22px solid var(--green);
     content: '';
     position: absolute;
-    z-index: 1;
+    z-index: 3;
     width: 50%;
     height: 50%;
-    top: -31px;
-    right: -40px;
+    top: -21px;
+    right: -22px;
     box-sizing: border-box;
+  }
+  .hero-line {
+    max-width: 1440px;
+    height: 2px;
+    background-color: var(--grey-font);
   }
 
   @media (min-width: 900px) {
@@ -187,9 +201,12 @@ import Button from '../../utils/Button.astro';
     }
     .hero-heading {
       font-size: 5rem;
+      max-width: 100%;
       line-height: normal;
     }
     .hero-subheading {
+      max-width: 100%;
+      text-wrap: balance;
       font-size: 1.5rem;
     }
     .hero-image--wrapper {
@@ -197,7 +214,7 @@ import Button from '../../utils/Button.astro';
       margin-top: 80px;
     }
   }
-  @media (max-width: 674px) {
+  @media (max-width: 750px) {
     .wrapper {
       flex-wrap: wrap;
     }
