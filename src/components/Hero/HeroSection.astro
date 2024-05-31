@@ -2,6 +2,7 @@
 import { Image } from 'astro:assets';
 import mephoto from '../../../public/me.webp';
 import Button from '../../utils/Button.astro';
+import ContactIcons from '../../utils/ContactIcons.astro';
 ---
 
 <section class='hero-section'>
@@ -33,6 +34,7 @@ import Button from '../../utils/Button.astro';
     >
   </button>
   <div class="hero-line"></div>
+  <ContactIcons />
 </section>
 
 <style>
@@ -113,7 +115,7 @@ import Button from '../../utils/Button.astro';
     position: relative;
     font-size: 3rem;
     padding-top: 40px;
-    max-width: 400px;
+    max-width: 450px;
     text-wrap: balance;
     line-height: 62px;
   }
@@ -173,7 +175,33 @@ import Button from '../../utils/Button.astro';
   .hero-line {
     max-width: 1440px;
     height: 2px;
+    opacity: .5;
     background-color: var(--grey-font);
+    position: relative;
+  }
+  .hero-line::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 10px;
+    height: 10px;
+    background-image: url('/dot.webp');
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  .hero-line::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 10px;
+    height: 10px;
+    background-image: url('/dot.webp');
+    background-repeat: no-repeat;
+    background-size: contain;
   }
 
   @media (min-width: 900px) {
@@ -191,7 +219,7 @@ import Button from '../../utils/Button.astro';
     }
     .hero-section::after,
     .hero-section::before {
-      top: 40px;
+      top: -22px;
     }
     .hero-container {
       max-width: 60%;
@@ -211,6 +239,9 @@ import Button from '../../utils/Button.astro';
     }
     .hero-image--wrapper {
       max-width: 300px;
+      margin-top: 80px;
+    }
+    .hero-line {
       margin-top: 80px;
     }
   }

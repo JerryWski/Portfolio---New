@@ -1,0 +1,64 @@
+---
+import { Icon } from 'astro-icon/components';
+---
+
+<div class='icons-container'>
+  <div class='contact-wrapper'>
+    <a class="icons-links" href='mailto:jarek_wasilewski@yahoo.com' aria-label='link to contact email'
+      ><Icon name='mail' /><span>jarek_wasilewski@yahoo.com</span></a
+    >
+    <a class="icons-links" aria-label="link to contact phone number" href="tel:+48663781576"><Icon name='phone'/><span>663 781 576</span></a>
+  </div>
+  <div class='social-wrapper'>
+    <a class="icons-links" aria-label="link to github profile" href="https://github.com/JerryWski">
+        <Icon name="github"/>
+    </a>
+    <a class="icons-links" aria-label="link to facebook profile" href="https://www.facebook.com/jaro.wasilewski"><Icon name='facebook'/></a>
+  </div>
+</div>
+
+<style>
+    .icons-container {
+        z-index: 10;
+        position: relative;
+        max-width: 600px;
+        padding-inline: 50px;
+        margin: 10px auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .contact-wrapper {
+        margin-top: 5px;
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+    }
+    .icons-links {
+        text-decoration: none;
+        display: flex;
+        color: var(--grey-font);
+        align-items: flex-start;
+        gap: 5px;
+        font-family: var(--second-font);
+    }
+    .icons-links span {
+      display: none;
+    }
+    .social-wrapper {
+        display: flex;
+        gap: 10px;
+    }
+    @media (min-width: 900px) {
+      .icons-container {
+        max-width: 1200px;
+      }
+      .contact-wrapper {
+        flex-direction: column;
+      }
+      .icons-links span {
+      display: flex;
+    }
+    }
+
+</style>
