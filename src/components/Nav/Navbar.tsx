@@ -18,7 +18,7 @@ const Navbar: React.FC = () => {
         <Hamburger isActive={isActive} animateBurger={animateBurger} />
         <ul className='nav-list desktop'>
           <li className='nav-list_item'>
-            <a href='/'>_about</a>
+            <a href='/#about'>_about</a>
           </li>
           <li className='nav-list_item'>
             <a href='/'>_skills</a>
@@ -35,7 +35,7 @@ const Navbar: React.FC = () => {
             <a href='/'>Home</a>
           </li>
           <li className='nav-list_item'>
-            <a href='/'>_o mnie</a>
+            <a href='/#about'>_o mnie</a>
           </li>
           <li className='nav-list_item'>
             <a href='/'>_skills</a>

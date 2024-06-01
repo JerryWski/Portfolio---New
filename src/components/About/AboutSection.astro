@@ -1,0 +1,77 @@
+---
+import { Icon } from 'astro-icon/components';
+---
+
+<section id='about' class='about-container'>
+  <div class='about-wrapper'>
+    <div class='about-theme-pointer'><Icon name='person' />About</div>
+    <h2 class='about-header'>Let's meet</h2>
+    <p>
+      Hello! My name is [Your Name], and I am a web developer with a passion for
+      creating innovative web solutions. For the past three years, I have been
+      honing my skills by working on various projects that allow me to combine
+      creativity with the latest technologies.
+    </p>
+    <p>
+      Programming is not just a profession for me; it's a way to fulfill my
+      passion. I thrive on challenges and the opportunity for continuous
+      improvement. My experience encompasses front-end and some design
+      development, enabling me to create comprehensive and functional web
+      applications.
+    </p>
+    <p>
+      I invite you to explore my portfolio, where you can find examples of my
+      previous work. If you are looking for a dedicated and creative web
+      developer who approaches every task with passion, feel free to contact me.
+      Together, we can create something exceptional!
+    </p>
+  </div>
+</section>
+
+<style>
+  .about-container {
+    height: 300px;
+    position: relative;
+    padding: 20px;
+    color: var(--wh);
+    /* padding-inline: 200px; */
+  }
+  .about-container::before {
+    content: 'frontend';
+    font-size: 4rem;
+    color: var(--grey-font);
+    position: absolute;
+    font-family: var(--second-font);
+    /* background-image: url('../../assets/about-bg2.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center; */
+    width: 100%;
+    left: 30%;
+    top: 20%;
+    height: 100%;
+    z-index: 0;
+    opacity: 0.1;
+  }
+  .about-wrapper {
+    padding-top: 80px;
+    max-width: 1440px;
+    margin: 0 auto;
+    position: relative;
+  }
+  .about-theme-pointer {
+    display: flex;
+    border: 1px solid var(--wh);
+    width: fit-content;
+    padding: 3px 10px;
+    border-radius: 7px;
+    gap: 5px;
+    color: var(--wh);
+    font-family: var(--second-font);
+  }
+  .about-header {
+    font-size: 2rem;
+    margin-top: 20px;
+    font-family: var(--main-font);
+  }
+</style>
