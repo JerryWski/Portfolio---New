@@ -5,39 +5,56 @@ import Button from '../../utils/Button.astro';
 import ContactIcons from '../../utils/ContactIcons.astro';
 ---
 
-<section class='hero-section'>
-  <div class='wrapper'>
-    <div class='hero-container'>
-      <h1 class='hero-heading'>
-        Hi, I'm
-        <span>Jarek</span>
-        Web Developer
-      </h1>
-      <p class='hero-subheading'>
-        Passionate about coding beautiful things, I love my work. Let's
-        collaborate and create something amazing!
-      </p>
-      <Button />
+<section class='block'>
+  <div class='hero-section'>
+    <div class='wrapper'>
+      <div class='hero-container'>
+        <h1 class='hero-heading'>
+          Hi, I'm
+          <span>Jarek</span>
+          Web Developer
+        </h1>
+        <p class='hero-subheading'>
+          Passionate about coding beautiful things, I love my work. Let's
+          collaborate and create something amazing!
+        </p>
+        <Button />
+      </div>
+      <div class='hero-image--wrapper'>
+        <Image
+          class='hero-image'
+          src={mephoto}
+          alt='man-selfie'
+          loading={'eager'}
+        />
+      </div>
     </div>
-    <div class='hero-image--wrapper'>
-      <Image
-        class='hero-image'
-        src={mephoto}
-        alt='man-selfie'
-        loading={'eager'}
-      />
-    </div>
+    <button class='btn-hero'
+      ><a class='btn-hero--link' aria-label='link to contact list' href='/'
+        >Hire me</a
+      >
+    </button>
+    <div class='hero-line'></div>
+    <ContactIcons class='test2' />
   </div>
-  <button class='btn-hero'
-    ><a class='btn-hero--link' aria-label='link to contact list' href='/'
-      >Hire me</a
-    >
-  </button>
-  <div class="hero-line"></div>
-  <ContactIcons />
 </section>
 
 <style>
+  .block {
+    position: relative;
+  }
+  .block::after {
+    position: absolute;
+    z-index: 1;
+    content: '';
+    top: -86%;
+    height: 145%;
+    width: 76%;
+    left: -32%;
+    background: linear-gradient(98.23deg, rgb(0, 0, 0), #af79ff);
+    -webkit-mask-image: radial-gradient(rgba(0, 0, 0, 0.7), transparent 70%);
+    mask-image: radial-gradient(rgba(0, 0, 0, 0.6), transparent 70%);
+  }
   .hero-section {
     padding: 20px;
     /* height: 100vh; */
@@ -46,6 +63,7 @@ import ContactIcons from '../../utils/ContactIcons.astro';
     background-color: var(--bg-graff);
     position: relative;
   }
+
   .hero-section::after,
   .hero-section::before {
     content: '';
@@ -58,7 +76,7 @@ import ContactIcons from '../../utils/ContactIcons.astro';
     transform: scaleX(-1);
     height: 100%;
     z-index: 0;
-    opacity: 0.1;
+    opacity: 0.05;
     -webkit-mask-image: linear-gradient(
       to bottom,
       transparent 1%,
@@ -90,14 +108,13 @@ import ContactIcons from '../../utils/ContactIcons.astro';
     margin: 100px auto 40px auto;
     position: relative;
     width: 78%;
-    z-index: 2;
     font-weight: 900;
     cursor: pointer;
     padding: 10px 40px;
     border-radius: 15px;
     background-color: var(--green);
     border: none;
-    transition: .3s background-color ease-in-out;
+    transition: 0.3s background-color ease-in-out;
   }
   .btn-hero:hover {
     background-color: var(--wh);
@@ -175,7 +192,7 @@ import ContactIcons from '../../utils/ContactIcons.astro';
   .hero-line {
     max-width: 1440px;
     height: 2px;
-    opacity: .5;
+    opacity: 0.5;
     background-color: var(--grey-font);
     position: relative;
   }
@@ -252,19 +269,19 @@ import ContactIcons from '../../utils/ContactIcons.astro';
   }
   @keyframes glow {
     0% {
-      opacity: 0.2;
+      opacity: 0.1;
     }
     25% {
-      opacity: 0.5;
+      opacity: 0.4;
     }
     50% {
-      opacity: 0.8;
+      opacity: 0.6;
     }
     75% {
-      opacity: 0.5;
+      opacity: 0.4;
     }
     100% {
-      opacity: 0.2;
+      opacity: 0.1;
     }
   }
 </style>
