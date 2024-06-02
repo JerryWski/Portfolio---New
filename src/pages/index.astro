@@ -11,8 +11,12 @@ import AboutSection from '../components/About/AboutSection.astro';
 <Layout title='Web Developer - Jerry_Wski - Tworzenie Stron WWW'>
   <header>
     <div class='header-wrapper'>
-      <Image class='logo-img desk' src={logo} alt='logo' loading={'eager'} />
-      <Image class='logo-img small' src={logo2} alt='logo' loading={'eager'} />
+      <a aria-label="link to home page" href="/">
+        <Image class='logo-img desk' src={logo} alt='logo' loading={'eager'} />
+      </a>
+      <a aria-label="link to home page" href="/">
+        <Image class='logo-img small' src={logo2} alt='logo' loading={'eager'} />
+      </a>
       <Navbar client:only='react' />
     </div>
   </header>
@@ -34,6 +38,8 @@ import AboutSection from '../components/About/AboutSection.astro';
     height: 100%;
   }
   .logo-img.small {
+    position: relative;
+    z-index: 100;
     max-width: 80px;
     padding: 10px;
   }
