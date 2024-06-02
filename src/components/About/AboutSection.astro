@@ -35,6 +35,7 @@ import { Icon } from 'astro-icon/components';
     position: relative;
     padding: 20px;
     color: var(--wh);
+    overflow: hidden;
   }
   .about-container::before {
     content: 'frontend';
@@ -49,18 +50,16 @@ import { Icon } from 'astro-icon/components';
     opacity: 0.1;
   }
   .about-container::after {
-    content: '';
     position: absolute;
-    background-image: url('../../assets/about-bg2.webp');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: 50px 50px;
-    left: 0%;
-    bottom: -20%;
+    z-index: -1;
+    content: '';
+    top: 25%;
+    height: 100%;
     width: 100%;
-    height: 70%;
-    z-index: 0;
-    opacity: 0.1;
+    left: 40%;
+    background: linear-gradient(247.23deg, rgb(2, 55, 20), #00480f);
+    -webkit-mask-image: radial-gradient(rgba(0, 0, 0, 0.7), transparent 70%);
+    mask-image: radial-gradient(rgba(0, 0, 0, 0.7), transparent 70%);
   }
   .about-wrapper {
     padding-top: 80px;
@@ -83,6 +82,18 @@ import { Icon } from 'astro-icon/components';
     margin-top: 20px;
     margin-bottom: 20px;
     font-family: var(--main-font);
+  }
+  .about-header::after {
+    content: 'design';
+    font-size: 2rem;
+    color: var(--grey-font);
+    position: absolute;
+    font-family: var(--second-font);
+    right: 0%;
+    top: 15%;
+    height: 100%;
+    z-index: 0;
+    opacity: 0.1;
   }
   .texts-wrapper {
     position: relative;
@@ -121,20 +132,25 @@ import { Icon } from 'astro-icon/components';
       left: 50%;
       top: 15%;
     }
+    .about-header::after {
+      content: '';
+      background-image: url('../../assets/about-bg2.webp');
+      background-repeat: no-repeat;
+      background-position: center;
+      transform: rotate(-90deg);
+      width: 100%;
+      position: absolute;
+      right: -52%;
+      top: 0%;
+      height: 100%;
+      z-index: 0;
+      opacity: 0.1;
+    }
+    .about-container::after {
+      display: none;
+    }
     p.about-text:nth-child(3)::after {
       bottom: -83%;
     }
-    /* .about-container::after {
-      position: absolute;
-      z-index: -1;
-      content: '';
-      top: 25%;
-      height: 150%;
-      width: 150%;
-      left: -25%;
-      background: linear-gradient(247.23deg, rgb(215, 238, 11), #00ff2a);
-      -webkit-mask-image: radial-gradient(rgba(0, 0, 0, 0.7), transparent 70%);
-      mask-image: radial-gradient(rgba(0, 0, 0, 0.7), transparent 70%);
-    } */
   }
 </style>
