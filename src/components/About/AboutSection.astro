@@ -6,25 +6,25 @@ import { Icon } from 'astro-icon/components';
   <div class='about-wrapper'>
     <div class='about-theme-pointer'><Icon name='person' />About</div>
     <h2 class='about-header'>Let's meet</h2>
-    <div class="texts-wrapper">
-      <p class="about-text">
+    <div class='texts-wrapper'>
+      <p class='about-text'>
         Hello! My name is Jarek, and I am a web developer with a passion for
         creating innovative web solutions. For the past three years, I have been
         honing my skills by working on various projects that allow me to combine
         creativity with the latest technologies.
       </p>
-      <p class="about-text">
+      <p class='about-text'>
         Programming is not just a profession for me; it's a way to fulfill my
         passion. I thrive on challenges and the opportunity for continuous
         improvement. My experience encompasses front-end and some design
         development, enabling me to create comprehensive and functional web
         applications.
       </p>
-      <p class="about-text">
+      <p class='about-text'>
         I invite you to explore my portfolio, where you can find examples of my
         previous work. If you are looking for a dedicated and creative web
-        developer who approaches every task with passion, feel free to contact me.
-        Together, we can create something exceptional!
+        developer who approaches every task with passion, feel free to contact
+        me. Together, we can create something exceptional!
       </p>
     </div>
   </div>
@@ -32,12 +32,9 @@ import { Icon } from 'astro-icon/components';
 
 <style>
   .about-container {
-    
     position: relative;
     padding: 20px;
     color: var(--wh);
-    
-    /* padding-inline: 200px; */
   }
   .about-container::before {
     content: 'frontend';
@@ -46,7 +43,7 @@ import { Icon } from 'astro-icon/components';
     position: absolute;
     font-family: var(--second-font);
     left: 15%;
-    top: 7%;
+    top: 4%;
     height: 100%;
     z-index: 0;
     opacity: 0.1;
@@ -86,7 +83,6 @@ import { Icon } from 'astro-icon/components';
     margin-top: 20px;
     margin-bottom: 20px;
     font-family: var(--main-font);
-
   }
   .texts-wrapper {
     position: relative;
@@ -114,6 +110,31 @@ import { Icon } from 'astro-icon/components';
     position: relative;
     font-size: 1.1rem;
     font-family: var(--second-font);
-    
+  }
+  @media (min-width: 900px) {
+    .about-wrapper {
+      border: 1px solid var(--grey-font);
+      padding: 50px;
+      border-radius: 7px;
+    }
+    .about-container::before {
+      left: 50%;
+      top: 15%;
+    }
+    p.about-text:nth-child(3)::after {
+      bottom: -83%;
+    }
+    /* .about-container::after {
+      position: absolute;
+      z-index: -1;
+      content: '';
+      top: 25%;
+      height: 150%;
+      width: 150%;
+      left: -25%;
+      background: linear-gradient(247.23deg, rgb(215, 238, 11), #00ff2a);
+      -webkit-mask-image: radial-gradient(rgba(0, 0, 0, 0.7), transparent 70%);
+      mask-image: radial-gradient(rgba(0, 0, 0, 0.7), transparent 70%);
+    } */
   }
 </style>
