@@ -1,16 +1,39 @@
 ---
+import { Icon } from "astro-icon/components"
+import ProjectCards from "./ProjectCards.astro"
 
 ---
 
-
-<section>
-    <h2>to sa moje projekty</h2>
+<section id="projects" class='projects-container'>
+  <div class='projects-wrapper'>
+    <div class='projects-theme-pointer'><Icon name='cogs' />Projects</div>
+    <h2 class="projects-header">Featured Projects</h2>
+    <ProjectCards />
+  </div>
 </section>
 
 <style>
-    section {
-        color: var(--bg-graff);
-        height: 400px;
-        background-color: var(--wh);
-    }
+  .projects-container {
+    padding: 80px 20px 80px;
+    color: var(--bg-graff);
+    
+    background-color: var(--wh);
+  }
+  .projects-theme-pointer {
+    display: flex;
+    border: 2px solid var(--grey-font);
+    width: fit-content;
+    padding: 3px 10px;
+    border-radius: 7px;
+    gap: 5px;
+    color: var(--grey-font);
+    font-family: var(--second-font);
+  }
+  .projects-header {
+    font-size: 2rem;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    
+    font-family: var(--main-font);
+  }
 </style>

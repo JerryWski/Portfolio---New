@@ -24,7 +24,7 @@ const Navbar: React.FC = () => {
             <a href='/'>_skills</a>
           </li>
           <li className='nav-list_item'>
-            <a href='/'>_projects</a>
+            <a href='/#projects'>_projects</a>
           </li>
           <li className='nav-list_item'>
             <a href='/'>_contact</a>
@@ -41,7 +41,7 @@ const Navbar: React.FC = () => {
             <a href='/'>_skills</a>
           </li>
           <li className='nav-list_item'>
-            <a href='/'>_projects</a>
+            <a href='/#projects'>_projects</a>
           </li>
           <li className='nav-list_item'>
             <a href='/'>_contact</a>
