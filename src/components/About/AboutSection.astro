@@ -33,7 +33,7 @@ import { Icon } from 'astro-icon/components';
 <style>
   .about-container {
     position: relative;
-    padding: 20px;
+    padding: 20px 20px 80px 20px;
     color: var(--wh);
     overflow: hidden;
   }
@@ -104,18 +104,6 @@ import { Icon } from 'astro-icon/components';
   p.about-text:nth-child(3) {
     position: relative;
   }
-  p.about-text:nth-child(3)::after {
-    content: 'design';
-    font-size: 3.5rem;
-    color: var(--grey-font);
-    position: absolute;
-    font-family: var(--second-font);
-    left: 20%;
-    bottom: -120%;
-    height: 100%;
-    z-index: 0;
-    opacity: 0.1;
-  }
   .about-text {
     z-index: 1;
     position: relative;
@@ -151,6 +139,16 @@ import { Icon } from 'astro-icon/components';
     }
     p.about-text:nth-child(3)::after {
       bottom: -83%;
+      left: 20%;
+      display: block;
+      content: 'design';
+      font-size: 3.5rem;
+      color: var(--grey-font);
+      position: absolute;
+      font-family: var(--second-font);
+      height: 100%;
+      z-index: 0;
+      opacity: 0.2;
     }
   }
 </style>
