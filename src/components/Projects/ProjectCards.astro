@@ -1,21 +1,11 @@
 ---
 import { Image } from 'astro:assets';
 import card1 from '../../assets/card1.webp';
+import card2 from '../../assets/card2.webp';
+import card3 from '../../assets/card3.webp';
 ---
 
 <div class='cards-container'>
-  <div class='cards-wrapper'>
-    <h4 class='card-overtext'>React / Typescript</h4>
-    <div class='card one'>
-      <Image class='card-img' src={card1} alt='happy family sitting' />
-    </div>
-    <h3 class='card-text'>
-      Cooperation on the website <a
-        aria-label='link to spelnij-marzenia site'
-        href='https://www.spelnij-marzenia.pl/'>Spełnij Marzenia</a
-      >
-    </h3>
-  </div>
 
   <div class='cards-wrapper'>
     <h4 class='card-overtext'>React / Typescript</h4>
@@ -32,13 +22,26 @@ import card1 from '../../assets/card1.webp';
 
   <div class='cards-wrapper'>
     <h4 class='card-overtext'>React / Typescript</h4>
-    <div class='card one'>
-      <Image class='card-img' src={card1} alt='happy family sitting' />
+    <div class='card two'>
+      <Image class='card-img' src={card2} alt='landing page of website' />
     </div>
     <h3 class='card-text'>
-      Cooperation on the website <a
+      Brand page for instagrammer <a
         aria-label='link to spelnij-marzenia site'
-        href='https://www.spelnij-marzenia.pl/'>Spełnij Marzenia</a
+        href='https://stowidokowhome.pl/'>stowidokow-home</a
+      >
+    </h3>
+  </div>
+
+  <div class='cards-wrapper'>
+    <h4 class='card-overtext'>Astro / React / Typescript</h4>
+    <div class='card three'>
+      <Image class='card-img' src={card3} alt='landing page of website' />
+    </div>
+    <h3 class='card-text'>
+      Website for a local beauty salon <a
+        aria-label='link to spelnij-marzenia site'
+        href='https://alohabeautylogic.pl/'>Aloha Beauty Logic Clinic</a
       >
     </h3>
   </div>
@@ -63,6 +66,8 @@ import card1 from '../../assets/card1.webp';
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     display: grid;
     gap: 60px;
+    z-index: 10;
+    position: relative;
   }
 
   .card {
@@ -72,9 +77,16 @@ import card1 from '../../assets/card1.webp';
     padding: 20px 0;
     grid-template-rows: subgrid;
     grid-row: span 3;
+   
   }
   .card.one {
-    background-color: var(--bg-graff);
+    background-color: rgb(230, 51, 51);
+  }
+  .card.two {
+    background-color: rgb(187, 147, 102);
+  }
+  .card.three {
+    background-color: var(--green);
   }
   .card-img {
     object-fit: contain;
@@ -93,6 +105,6 @@ import card1 from '../../assets/card1.webp';
     font-size: 1.2rem;
   }
   .card-text a {
-    color: var(--green);
+    color: var(--bg-black);
   }
 </style>
