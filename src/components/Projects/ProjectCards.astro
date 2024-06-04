@@ -3,6 +3,9 @@ import { Image } from 'astro:assets';
 import card1 from '../../assets/card1.webp';
 import card2 from '../../assets/card2.webp';
 import card3 from '../../assets/card3.webp';
+import card4 from '../../assets/card4.webp';
+import card5 from '../../assets/card5.webp';
+import card6 from '../../assets/card6.webp';
 ---
 
 <div class='cards-container'>
@@ -35,10 +38,14 @@ import card3 from '../../assets/card3.webp';
   <div class='cards-wrapper'>
     <h4 class='card-overtext'>Astro / React / Typescript</h4>
     <div class='card three'>
-      <Image class='card-img' src={card3} alt='landing page of website' />
+      <Image
+        class='card-img'
+        src={card3}
+        alt='landing page of beauty clinic website'
+      />
     </div>
     <h3 class='card-text'>
-      Website for a local beauty salon <a
+      Local beauty salon <a
         aria-label='link to spelnij-marzenia site'
         href='https://alohabeautylogic.pl/'>Aloha Beauty Logic Clinic</a
       >
@@ -46,17 +53,73 @@ import card3 from '../../assets/card3.webp';
   </div>
 
   <div class='cards-wrapper'>
-    <p class='card-overtext'>React / Typescript</p>
-    <div class='card one'>
-      <Image class='card-img' src={card1} alt='happy family sitting' />
+    <p class='card-overtext'>Astro / React / Typescript</p>
+    <div class='card four'>
+      <Image
+        class='card-img'
+        src={card4}
+        alt='landing page of nicotione website'
+      />
     </div>
     <h3 class='card-text'>
-      Cooperation on the website <a
+      Website for an international supplier of liquid nicotine <a
         aria-label='link to spelnij-marzenia site'
-        href='https://www.spelnij-marzenia.pl/'>Spełnij Marzenia</a
+        href='http://hinic.eu/'>Hinic Poland</a
       >
     </h3>
   </div>
+
+  <div class='cards-wrapper'>
+    <p class='card-overtext'>Astro / React / Typescript</p>
+    <div class='card five'>
+      <Image
+        class='card-img'
+        src={card5}
+        alt='landing page of firefighting website'
+      />
+    </div>
+    <h3 class='card-text'>
+      Local company offering fire protection services <a
+        aria-label='link to spelnij-marzenia site'
+        href='https://mr-poz.pl/'>MR-POŻ - Usługi PPOŻ</a
+      >
+    </h3>
+  </div>
+
+  <div class='cards-wrapper'>
+    <p class='card-overtext'>Astro / React / Typescript</p>
+    <div class='card six'>
+      <Image
+        class='card-img'
+        src={card6}
+        alt='landing page of speech therapist website'
+      />
+    </div>
+    <h3 class='card-text'>
+      Website for local speech and pedagogy specialist <a
+        aria-label='link to spelnij-marzenia site'
+        href='https://logo-lama.pl/'>Logo Lama</a
+      >
+    </h3>
+  </div>
+
+  <div class='cards-wrapper'>
+    <p class='card-overtext'>Astro / React / Typescript</p>
+    <div class='card four'>
+      <Image
+        class='card-img'
+        src={card4}
+        alt='landing page of nicotione website'
+      />
+    </div>
+    <h3 class='card-text'>
+      Website for an international supplier of liquid nicotine <a
+        aria-label='link to spelnij-marzenia site'
+        href='http://hinic.eu/'>Hinic Poland</a
+      >
+    </h3>
+  </div>
+
 </div>
 
 <style>
@@ -88,6 +151,15 @@ import card3 from '../../assets/card3.webp';
   }
   .card.three {
     background-color: var(--green);
+  }
+  .card.four {
+    background-color: rgb(32, 45, 87);
+  }
+  .card.five {
+    background-color: rgb(184, 137, 8);
+  }
+  .card.six {
+    background-color: rgb(240, 185, 226);
   }
   .card-img {
     object-fit: contain;
