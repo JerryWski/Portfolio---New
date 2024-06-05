@@ -3,14 +3,17 @@ import { Icon } from 'astro-icon/components';
 import ProjectCards from './ProjectCards.astro';
 import { Image } from 'astro:assets';
 import bg from '../../assets/projects-bg.webp';
+import OthersCards from './OthersCards.astro';
 ---
 
 <section id='projects' class='projects-container'>
   <Image class="bg-img" src={bg} alt="technology circuits lines"/>
   <div class='projects-wrapper'>
     <div class='projects-theme-pointer'><Icon name='cogs' />Projects</div>
-    <h2 class='projects-header'>Featured Projects</h2>
+    <h2 class='projects-header'>Recent Work</h2>
     <ProjectCards />
+    <h3 class="projects-subheader">.../Other projects</h3>
+    <OthersCards />
   </div>
 </section>
 
@@ -68,5 +71,19 @@ import bg from '../../assets/projects-bg.webp';
     position: relative;
     z-index: 1;
     font-family: var(--main-font);
+  }
+  .projects-subheader {
+    margin-top: 60px;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+    font-family: var(--main-font); 
+  }
+  @media (min-width: 900px) {
+    .projects-wrapper {
+      max-width: 1440px;
+      margin-inline: auto;
+    }
   }
 </style>
