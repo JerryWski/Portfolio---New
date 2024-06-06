@@ -2,6 +2,7 @@
 import { Image } from 'astro:assets';
 import app1 from '../../assets/app1.webp';
 import app2 from '../../assets/app2.webp';
+import app3 from '../../assets/app3.webp';
 ---
 
 <div class='other-container'>
@@ -18,17 +19,18 @@ import app2 from '../../assets/app2.webp';
       Helps to quickly calculate returns on both bank deposits and investment
       funds, without the need for online calculators. Try my app <a
         aria-label='link to app site'
-        href='https://letscountit.netlify.app/'>Let's Count It</a>
+        href='https://letscountit.netlify.app/'>Let's Count It.</a
+      >
     </h3>
   </div>
 
   <div class='others-wrapper'>
     <p class='other-overtext'>Canva / Figma</p>
     <div class='other two'>
-      <Image class='other-img' src={app2} alt='happy family sitting' />
+      <Image class='other-img' src={app2} alt='set of e-book covers' />
     </div>
     <h3 class='other-text'>
-      Design and production of an interior design e-book for a major influencer
+      Design and production of an interior design e-book for one of majors interior influencer
       in Poland.
     </h3>
     <h3 class='other-text'>
@@ -36,20 +38,29 @@ import app2 from '../../assets/app2.webp';
       Figma. The aforementioned e-books were a great addition to the website I
       created. <a
         aria-label='link to app site'
-        href='https://stowidokowhome.pl/'>stowidokow.home</a>
+        href='https://stowidokowhome.pl/'>stowidokow.home</a
+      >
     </h3>
   </div>
 
   <div class='others-wrapper'>
-    <p class='other-overtext'>React / Typescript</p>
-    <div class='other one'>
-      <Image class='other-img' src={app1} alt='happy family sitting' />
+    <p class='other-overtext'>Canva / Figma / Photoshop</p>
+    <div class='other three'>
+      <Image class='other-img' src={app3} alt='set of e-book covers' />
     </div>
     <h3 class='other-text'>
-      Cooperation on the website <a
+      Cooperation on the development of the website resulted in the creation of
+      6 ebooks for the only housing lottery of its kind in Poland<a
         aria-label='link to spelnij-marzenia site'
-        href='https://www.spelnij-marzenia.pl/'>Spełnij Marzenia</a
+        href='https://www.spelnij-marzenia.pl/'
       >
+        Spełnij Marzenia.</a
+      >
+    </h3>
+    <h3 class='other-text'>
+      Creating the graphics for the e-books allowed me to strengthen my skills
+      as a graphic designer and contributed to a project in which winning the
+      top prize helped to change the lives of people.
     </h3>
   </div>
 </div>
@@ -81,6 +92,9 @@ import app2 from '../../assets/app2.webp';
   .other.two {
     background-color: rgb(236, 117, 48);
   }
+  .other.three {
+    background-color: var(--bg-black);
+  }
   .other-img {
     object-fit: contain;
     max-width: 100%;
@@ -98,6 +112,8 @@ import app2 from '../../assets/app2.webp';
     margin-top: 10px;
     font-family: var(--second-font);
     font-size: 1.2rem;
+    font-weight: 300;
+    color: inherit;
   }
   .other-text a {
     color: var(--bg-black);
