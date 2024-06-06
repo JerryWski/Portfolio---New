@@ -10,14 +10,17 @@ import OthersCards from './OthersCards.astro';
   <Image class="bg-img" src={bg} alt="technology circuits lines"/>
   <div class='projects-wrapper'>
     <div class='projects-theme-pointer'><Icon name='cogs' />Projects</div>
-    <h2 class='projects-header'>Recent Work</h2>
+    <h2 class='projects-header'>&lt; /<span class="span-header">Recent Work</span> &gt;</h2>
     <ProjectCards />
-    <h3 class="projects-subheader">.../Other projects</h3>
+    <h3 class="projects-subheader">.../<span class="span-header">Other projects</span></h3>
     <OthersCards />
   </div>
 </section>
 
 <style>
+  .span-header {
+    color: var(--green);
+  }
   .projects-container {
     padding: 80px 20px 80px;
     color: var(--bg-graff);
