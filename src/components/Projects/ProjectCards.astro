@@ -6,10 +6,10 @@ import card3 from '../../assets/card3.webp';
 import card4 from '../../assets/card4.webp';
 import card5 from '../../assets/card5.webp';
 import card6 from '../../assets/card6.webp';
+import { Icon } from 'astro-icon/components';
 ---
 
 <div class='cards-container'>
-  
   <div class='cards-wrapper'>
     <p class='card-overtext'>React / Typescript</p>
     <div class='card one'>
@@ -104,6 +104,10 @@ import card6 from '../../assets/card6.webp';
     </h3>
   </div>
 
+  <div class='cta last'>
+      <p>You can check my work also on</p>
+      <Icon class="cta-icon" width={70} height={70} name='github2' />
+  </div>
 </div>
 
 <style>
@@ -124,6 +128,7 @@ import card6 from '../../assets/card6.webp';
     grid-row: span 3;
     gap: 5px;
   }
+
   .card {
     border-radius: 15px;
   }
@@ -144,6 +149,27 @@ import card6 from '../../assets/card6.webp';
   }
   .card.six {
     background-color: rgb(240, 185, 226);
+  }
+  .cta.last {
+    grid-row: span 3;
+    padding: 20px;
+    width: 600px;
+    /* color: var(--wh); */
+    text-align: center;
+    align-self: center;
+    border: 2px solid var(--bg-graff);
+    margin-left: 0 auto;
+    border-radius: 7px;
+    /* background-color: var(--bg-graff); */
+  }
+  .cta.last p {
+    text-align: center;
+    font-family: var(--main-font);
+    font-size: clamp(1rem, 2vw, 1.5rem);
+  }
+  .cta-icon {
+    margin-top: 30px;
+    fill: var(--bg-graff);
   }
   .card-img {
     object-fit: contain;
