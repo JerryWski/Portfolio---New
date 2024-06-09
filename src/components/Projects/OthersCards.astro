@@ -3,13 +3,19 @@ import { Image } from 'astro:assets';
 import app1 from '../../assets/app1.webp';
 import app2 from '../../assets/app2.webp';
 import app3 from '../../assets/app3.webp';
+import app4 from '../../assets/app4.webp';
 ---
 
 <div class='other-container'>
   <div class='others-wrapper'>
     <p class='other-overtext'>React / Typescript</p>
     <div class='other one'>
-      <Image class='other-img' src={app1} alt='landing page' />
+      <Image
+        loading={'eager'}
+        class='other-img'
+        src={app1}
+        alt='landing page'
+      />
     </div>
     <h3 class='other-text'>
       My first application written based on experience from the financial
@@ -19,7 +25,7 @@ import app3 from '../../assets/app3.webp';
       Helps to quickly calculate returns on both bank deposits and investment
       funds, without the need for online calculators. Try my app <a
         aria-label='link to app site'
-        href='https://letscountit.netlify.app/'>Let's Count It.</a
+        href='https://letscountit.netlify.app/'>- Let's Count It.</a
       >
     </h3>
   </div>
@@ -27,18 +33,25 @@ import app3 from '../../assets/app3.webp';
   <div class='others-wrapper'>
     <p class='other-overtext'>Canva / Figma</p>
     <div class='other two'>
-      <Image class='other-img' src={app2} alt='set of e-book covers' />
+      <Image
+        loading={'eager'}
+        class='other-img'
+        src={app2}
+        alt='set of e-book covers'
+      />
     </div>
     <h3 class='other-text'>
-      Design and production of an interior design e-book for one of majors interior influencer
-      in Poland.
+      Design and production of an interior design e-book for one of majors
+      interior influencer in Poland.
     </h3>
     <h3 class='other-text'>
       A big challenge with this project was learning new tools such as Canva and
       Figma. The aforementioned e-books were a great addition to the website I
       created. <a
         aria-label='link to app site'
-        href='https://stowidokowhome.pl/'>stowidokow.home</a
+        href='https://stowidokowhome.pl/'
+      >
+        - stowidokow.home</a
       >
     </h3>
   </div>
@@ -46,7 +59,12 @@ import app3 from '../../assets/app3.webp';
   <div class='others-wrapper'>
     <p class='other-overtext'>Canva / Figma / Photoshop</p>
     <div class='other three'>
-      <Image class='other-img' src={app3} alt='set of e-book covers' />
+      <Image
+        loading={'eager'}
+        class='other-img'
+        src={app3}
+        alt='set of e-book covers'
+      />
     </div>
     <h3 class='other-text'>
       Cooperation on the development of the website resulted in the creation of
@@ -54,13 +72,38 @@ import app3 from '../../assets/app3.webp';
         aria-label='link to spelnij-marzenia site'
         href='https://www.spelnij-marzenia.pl/'
       >
-        Spełnij Marzenia.</a
+        - Spełnij Marzenia.</a
       >
     </h3>
     <h3 class='other-text'>
       Creating the graphics for the e-books allowed me to strengthen my skills
       as a graphic designer and contributed to a project in which winning the
       top prize helped to change the lives of people.
+    </h3>
+  </div>
+
+  <div class='others-wrapper'>
+    <p class='other-overtext'>SCSS / JavaScript</p>
+    <div class='other four'>
+      <Image
+        loading={'eager'}
+        class='other-img'
+        src={app4}
+        alt='landing page'
+      />
+    </div>
+    <h3 class='other-text'>
+      Simple dashboard showing examples of social media statistics<a
+        aria-label='social dashboard'
+        href='https://jerrywski.github.io/social-dashborad-switch-dark-light/'
+      >
+        - Social Dashoboard.</a
+      >
+    </h3>
+    <h3 class='other-text'>
+      One of the first challenges from Frontend Mentor, where I used a solution
+      to change the light and dark colour of the background and elements on the
+      page.
     </h3>
   </div>
 </div>
@@ -95,6 +138,9 @@ import app3 from '../../assets/app3.webp';
   .other.three {
     background-color: var(--bg-black);
   }
+  .other.four {
+    background-color: rgb(61, 115, 196);
+  }
   .other-img {
     object-fit: contain;
     max-width: 100%;
@@ -111,7 +157,7 @@ import app3 from '../../assets/app3.webp';
   .other-text {
     margin-top: 10px;
     font-family: var(--second-font);
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: 300;
     color: inherit;
   }
