@@ -3,7 +3,7 @@ import { Icon } from 'astro-icon/components';
 ---
 
 <div class='cta last'>
-  <p>You can check my work also on</p>
+  <p>You can check <span class="cta-span">my work </span>also on</p>
   <a aria-label='link to github profile' href='https://github.com/JerryWski'>
     <Icon class='cta-icon' width={70} height={70} name='github2' />
   </a>
@@ -12,6 +12,9 @@ import { Icon } from 'astro-icon/components';
 <style>
   .cta.last {
     display: none;
+  }
+  .cta-span {
+    color: var(--green);
   }
   @media (min-width: 610px) {
     .cta.last {
