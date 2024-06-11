@@ -1,11 +1,17 @@
 ---
-import { Icon } from 'astro-icon/components';
+// import { Icon } from 'astro-icon/components';
+import LottieIcon from './LottieIcon';
 ---
 
 <div class='cta last'>
-  <p>You can check <span class="cta-span">my work </span>also on</p>
-  <a aria-label='link to github profile' href='https://github.com/JerryWski'>
-    <Icon class='cta-icon' width={70} height={70} name='github2' />
+  <p>You can check <span class='cta-span'>my work </span>also on</p>
+  <a
+    class='cta-link'
+    aria-label='link to github profile'
+    href='https://github.com/JerryWski'
+  >
+    <LottieIcon client:only='react' />
+    <!-- <Icon class='cta-icon' width={70} height={70} name='github2' /> -->
   </a>
 </div>
 
@@ -16,6 +22,7 @@ import { Icon } from 'astro-icon/components';
   .cta-span {
     color: var(--green);
   }
+
   @media (min-width: 610px) {
     .cta.last {
       grid-row: span 3;
@@ -35,11 +42,12 @@ import { Icon } from 'astro-icon/components';
       font-weight: 900;
       color: var(--grey-font);
     }
-    .cta-icon {
-      margin-top: 30px;
-      transition: all 0.2s ease-in;
+    .cta-link {
+      width: 150px;
+      height: 150px;
+      justify-self: center;
     }
-    .cta-icon:hover {
+    .cta-link:hover {
       opacity: 0.7;
     }
   }
