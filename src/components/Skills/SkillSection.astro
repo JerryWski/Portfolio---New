@@ -1,0 +1,42 @@
+---
+import { Icon } from 'astro-icon/components';
+---
+
+<section class='skills-section'>
+  <div class='skills-wrapper'>
+    <div class='skills-theme-pointer'><Icon name='laptop' />Skills</div>
+    <h2 class='skills-header'>&lt; /Skills &gt</h2>
+  </div>
+</section>
+
+<style>
+  .skills-section {
+    height: 600px;
+    position: relative;
+    padding: 20px 20px 80px 20px;
+    color: var(--wh);
+    overflow: hidden;
+  }
+  .skills-wrapper {
+    padding-top: 80px;
+    max-width: 1440px;
+    margin: 0 auto;
+    position: relative;
+  }
+  .skills-theme-pointer {
+    display: flex;
+    border: 1px solid var(--green);
+    width: fit-content;
+    padding: 3px 10px;
+    border-radius: 7px;
+    gap: 5px;
+    color: var(--green);
+    font-family: var(--second-font);
+  }
+  .skills-header {
+    font-size: 2rem;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-family: var(--main-font);
+  }
+</style>

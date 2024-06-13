@@ -40,13 +40,6 @@ import ContactIcons from '../../utils/ContactIcons.astro';
 </section>
 
 <style>
-  .hero-section {
-    padding: 20px;
-    max-width: 1440px;
-    margin: 0 auto;
-    background-color: var(--bg-graff);
-    position: relative;
-  }
   .block {
     position: relative;
   }
@@ -66,6 +59,13 @@ import ContactIcons from '../../utils/ContactIcons.astro';
     width: 100%;
     left: 0%;
     transition: none;
+  }
+  .hero-section {
+    padding: 20px;
+    max-width: 1440px;
+    margin: 0 auto;
+    background-color: var(--bg-graff);
+    position: relative;
   }
   .hero-section::after,
   .hero-section::before {
@@ -134,7 +134,7 @@ import ContactIcons from '../../utils/ContactIcons.astro';
     font-weight: 900;
     z-index: 100;
     position: relative;
-    font-size: clamp(3rem,3vw,3.1rem);
+    font-size: clamp(3rem, 3vw, 3.1rem);
     padding-top: 40px;
     max-width: 450px;
     text-wrap: balance;
