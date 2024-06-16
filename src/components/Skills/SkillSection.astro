@@ -6,6 +6,10 @@ import { Icon } from 'astro-icon/components';
   <div class='skills-wrapper'>
     <div class='skills-theme-pointer'><Icon name='laptop' />Skills</div>
     <h2 class='skills-header'>&lt; /Skills &gt</h2>
+    <h3 class='skills-quote title'>
+      " If You Are Going Through Hell, Keep Going "
+    </h3>
+    <h4 class='skills-quote author'>Winston Churchill</h4>
   </div>
 </section>
 
@@ -38,5 +42,24 @@ import { Icon } from 'astro-icon/components';
     margin-top: 20px;
     margin-bottom: 20px;
     font-family: var(--main-font);
+  }
+  .skills-quote {
+    margin-block-start: 1.3em;
+    color: var(--grey-font);
+    font-family: var(--main-font);
+  }
+  .title {
+    font-size: clamp(2rem, 2.5vw, 2.7rem);
+  }
+  .author {
+    color: var(--light-grey);
+    width: 100%;
+    font-style: italic;
+  }
+  @media (min-width: 900px) {
+    .author {
+      margin-right: 100px;
+      text-align: right;
+    }
   }
 </style>

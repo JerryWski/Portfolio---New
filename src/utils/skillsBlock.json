@@ -1,0 +1,84 @@
+[
+  {
+    "title": "Dev Languages",
+    "skills": [
+      {
+        "name": "JavaScript",
+        "icon": "react"
+      },
+      {
+        "name": "Python",
+        "icon": "react"
+      }
+    ]
+  },
+  {
+    "title": "Frameworks",
+    "skills": [
+      {
+        "name": "ReactJS",
+        "icon": "react"
+      },
+      {
+        "name": "AstroJS",
+        "icon": "react"
+      }
+    ]
+  },
+  {
+    "title": "Styling",
+    "skills": [
+      {
+        "name": "HTML",
+        "icon": "react"
+      },
+      {
+        "name": "CSS3",
+        "icon": "react"
+      },
+      {
+        "name": "Sass",
+        "icon": "react"
+      }
+    ]
+  },
+  {
+    "title": "Bundlers",
+    "skills": [
+        {
+          "name": "Vite",
+          "icon": "react"
+        },
+        {
+          "name": "Webpack",
+          "icon": "react"
+        }
+      ]
+  },
+  {
+    "title": "Task Runners",
+    "skills": [
+        {
+          "name": "Gulp",
+          "icon": "react"
+        }
+      ]
+  },
+  {
+  "title": "Design",
+    "skills": [
+      {
+        "name": "Adobe Photoshop",
+        "icon": "react"
+      },
+      {
+        "name": "Figma",
+        "icon": "react"
+      },
+      {
+        "name": "Canva",
+        "icon": "react"
+      }
+    ]
+  }
+]
