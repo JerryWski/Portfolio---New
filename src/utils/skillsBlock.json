@@ -4,11 +4,11 @@
     "skills": [
       {
         "name": "JavaScript",
-        "icon": "react"
+        "icon": "js"
       },
       {
         "name": "Python",
-        "icon": "react"
+        "icon": "python"
       }
     ]
   },
@@ -21,24 +21,28 @@
       },
       {
         "name": "AstroJS",
-        "icon": "react"
+        "icon": "astro"
       }
     ]
   },
   {
-    "title": "Styling",
+    "title": "Styling & Coding",
     "skills": [
       {
         "name": "HTML",
-        "icon": "react"
+        "icon": "html"
       },
       {
         "name": "CSS3",
-        "icon": "react"
+        "icon": "css3"
       },
       {
         "name": "Sass",
-        "icon": "react"
+        "icon": "sass"
+      },
+      {
+        "name":"TypeScript",
+        "icon": "ts"
       }
     ]
   },
@@ -47,11 +51,11 @@
     "skills": [
         {
           "name": "Vite",
-          "icon": "react"
+          "icon": "vite"
         },
         {
           "name": "Webpack",
-          "icon": "react"
+          "icon": "webpack"
         }
       ]
   },
@@ -60,7 +64,7 @@
     "skills": [
         {
           "name": "Gulp",
-          "icon": "react"
+          "icon": "gulp"
         }
       ]
   },
@@ -69,15 +73,15 @@
     "skills": [
       {
         "name": "Adobe Photoshop",
-        "icon": "react"
+        "icon": "ps"
       },
       {
         "name": "Figma",
-        "icon": "react"
+        "icon": "figma"
       },
       {
         "name": "Canva",
-        "icon": "react"
+        "icon": "canva"
       }
     ]
   }

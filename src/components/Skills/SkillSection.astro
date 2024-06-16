@@ -1,5 +1,7 @@
 ---
 import { Icon } from 'astro-icon/components';
+import skillsBlock from '../../utils/skillsBlock.json';
+import SkillsBlock from './SkillsBlock.astro';
 ---
 
 <section class='skills-section'>
@@ -10,12 +12,19 @@ import { Icon } from 'astro-icon/components';
       " If You Are Going Through Hell, Keep Going "
     </h3>
     <h4 class='skills-quote author'>Winston Churchill</h4>
+
+    <div class="skill-container">
+      {skillsBlock.map(block => (
+        <SkillsBlock title={block.title} skills={block.skills} />
+      ))}
+    </div>
+
   </div>
 </section>
 
 <style>
   .skills-section {
-    height: 600px;
+    
     position: relative;
     padding: 20px 20px 80px 20px;
     color: var(--wh);

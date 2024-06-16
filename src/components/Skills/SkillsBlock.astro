@@ -1,0 +1,28 @@
+---
+import { Icon } from 'astro-icon/components';
+
+interface Skill {
+  name: string;
+  icon: string;
+}
+interface Props {
+  title: string;
+  skills: Skill[];
+}
+
+const { title, skills } = Astro.props;
+---
+
+<div class='skill-block'>
+  <h3>{title}</h3>
+  <ul>
+    {
+      skills.map((skill) => (
+        <li>
+          <Icon name={skill.icon}/>
+          {skill.name}
+        </li>
+      ))
+    }
+  </ul>
+</div>
