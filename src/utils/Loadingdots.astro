@@ -1,0 +1,96 @@
+---
+
+---
+
+<div class="loading-wrapper">
+    <p class='loading-text'>Learning New Skills - Stay Tuned</p>
+    <div class='loading-dots'>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+</div>
+
+<style>
+   .loading-wrapper {
+    margin-top: 120px;
+   } 
+  .loading-dots {
+    margin: 0px auto 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 80px;
+    height: 80px;
+  }
+  .loading-text {
+    text-wrap: balance;
+    text-align: center;
+    min-width: 280px;
+    font-size: 1.4rem;
+    font-family: var(--main-font);
+    color: var(--green);
+    animation: blinking 0.9s infinite;
+  }
+  .loading-dots > div {
+    background: var(--green);
+    position: absolute;
+    top: 33px;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    animation-timing-function: cubic-bezier(0, 1, 1, 0);
+  }
+  .loading-dots div:nth-child(1) {
+    left: 8px;
+    animation: loading-dots1 0.9s infinite;
+  }
+  .loading-dots div:nth-child(2) {
+    left: 8px;
+    animation: loading-dots2 0.9s infinite;
+  }
+  .loading-dots div:nth-child(3) {
+    left: 32px;
+    animation: loading-dots2 0.9s infinite;
+  }
+  .loading-dots div:nth-child(4) {
+    left: 56px;
+    animation: loading-dots3 0.9s infinite;
+  }
+
+  @keyframes loading-dots1 {
+    0% {
+      transform: scale(0);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  @keyframes loading-dots3 {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(0);
+    }
+  }
+  @keyframes loading-dots2 {
+    0% {
+      transform: translate(0, 0);
+    }
+    100% {
+      transform: translate(24px, 0);
+    }
+  }
+
+  @keyframes blinking {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+</style>

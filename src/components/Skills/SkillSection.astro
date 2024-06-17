@@ -2,6 +2,7 @@
 import { Icon } from 'astro-icon/components';
 import skillsBlock from '../../utils/skillsBlock.json';
 import SkillsBlock from './SkillsBlock.astro';
+import Loadingdots from '../../utils/Loadingdots.astro';
 ---
 
 <section class='skills-section'>
@@ -18,6 +19,8 @@ import SkillsBlock from './SkillsBlock.astro';
         <SkillsBlock title={block.title} skills={block.skills} />
       ))}
     </div>
+
+    <Loadingdots />
 
   </div>
 </section>
@@ -55,15 +58,19 @@ import SkillsBlock from './SkillsBlock.astro';
   .skills-quote {
     margin-block-start: 1.3em;
     color: var(--grey-font);
-    font-family: var(--main-font);
+    font-family: var(--second-font);
+    font-style: italic;
   }
   .title {
-    font-size: clamp(2rem, 2.5vw, 2.7rem);
+    font-size: clamp(1.7rem, 2.5vw, 2.7rem);
+    text-wrap: balance;
   }
   .author {
     color: var(--light-grey);
     width: 100%;
-    font-style: italic;
+  }
+  .skill-container {
+    margin-top: 80px;
   }
   @media (min-width: 900px) {
     .author {

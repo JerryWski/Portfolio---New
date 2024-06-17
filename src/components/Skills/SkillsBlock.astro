@@ -14,15 +14,44 @@ const { title, skills } = Astro.props;
 ---
 
 <div class='skill-block'>
-  <h3>{title}</h3>
-  <ul>
+  <h3 class='skill-title'>{title}</h3>
+  <ul class='skill-list'>
     {
       skills.map((skill) => (
-        <li>
-          <Icon name={skill.icon}/>
+        <li class='skill-list-item'>
+          <Icon class='skill-icon' name={skill.icon} />
           {skill.name}
         </li>
       ))
     }
   </ul>
 </div>
+
+<style>
+  .skill-block {
+    margin-bottom: 60px;
+  }
+  .skill-title {
+    font-family: var(--second-font);
+    font-size: 4.3ch;
+    color: var(--green);
+    margin-bottom: 20px;
+  }
+  .skill-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    justify-content: center;
+  }
+  .skill-list-item {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+    font-family: var(--second-font);
+    font-size: 1.5rem;
+  }
+  .skill-icon {
+    font-size: 3rem;
+  }
+</style>
