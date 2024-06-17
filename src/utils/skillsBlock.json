@@ -4,11 +4,11 @@
     "skills": [
       {
         "name": "JavaScript",
-        "icon": "js"
+        "icon": "js3"
       },
       {
         "name": "Python",
-        "icon": "python"
+        "icon": "python2"
       }
     ]
   },
@@ -17,11 +17,11 @@
     "skills": [
       {
         "name": "ReactJS",
-        "icon": "react"
+        "icon": "react2"
       },
       {
         "name": "AstroJS",
-        "icon": "astro"
+        "icon": "astro2"
       }
     ]
   },
@@ -30,19 +30,19 @@
     "skills": [
       {
         "name": "HTML",
-        "icon": "html"
+        "icon": "html2"
       },
       {
         "name": "CSS3",
-        "icon": "css3"
+        "icon": "css2"
       },
       {
         "name": "Sass",
-        "icon": "sass"
+        "icon": "sass2"
       },
       {
         "name":"TypeScript",
-        "icon": "ts"
+        "icon": "ts2"
       }
     ]
   },
@@ -51,11 +51,11 @@
     "skills": [
         {
           "name": "Vite",
-          "icon": "vite"
+          "icon": "vite2"
         },
         {
           "name": "Webpack",
-          "icon": "webpack"
+          "icon": "webpack2"
         }
       ]
   },
@@ -64,7 +64,7 @@
     "skills": [
         {
           "name": "Gulp",
-          "icon": "gulp"
+          "icon": "gulp2"
         }
       ]
   },
@@ -73,15 +73,15 @@
     "skills": [
       {
         "name": "Adobe Photoshop",
-        "icon": "ps"
+        "icon": "ps2"
       },
       {
         "name": "Figma",
-        "icon": "figma"
+        "icon": "figma2"
       },
       {
         "name": "Canva",
-        "icon": "canva"
+        "icon": "canva2"
       }
     ]
   }
