@@ -34,8 +34,11 @@ const { title, skills } = Astro.props;
   .skill-title {
     font-family: var(--second-font);
     font-size: 4.3ch;
+    text-decoration: underline;
+    text-decoration-color: var(--light-grey);
+    text-underline-offset: 15px;
     color: var(--green);
-    margin-bottom: 20px;
+    margin-bottom: 40px;
   }
   .skill-list {
     list-style: none;
@@ -53,5 +56,10 @@ const { title, skills } = Astro.props;
   }
   .skill-icon {
     font-size: 3rem;
+  }
+  @media (min-width: 900px) {
+    .skill-block {
+      
+    }
   }
 </style>
