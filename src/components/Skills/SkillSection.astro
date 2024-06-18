@@ -5,7 +5,7 @@ import SkillsBlock from './SkillsBlock.astro';
 import Loadingdots from '../../utils/Loadingdots.astro';
 ---
 
-<section class='skills-section'>
+<section id='skills' class='skills-section'>
   <div class='skills-wrapper'>
     <div class='skills-theme-pointer'><Icon name='laptop' />Skills</div>
     <h2 class='skills-header'>&lt; /Skills &gt</h2>
@@ -32,6 +32,18 @@ import Loadingdots from '../../utils/Loadingdots.astro';
     padding: 20px 20px 80px 20px;
     color: var(--wh);
     overflow: hidden;
+  }
+  .skills-section::after {
+    position: absolute;
+    z-index: -1;
+    content: '';
+    top: 30%;
+    height: 40%;
+    width: 40%;
+    left: 30%;
+    background-image: radial-gradient(circle, rgba(78, 161, 70, 1) 0%, rgba(5, 55, 23, 1) 82%);
+    -webkit-mask-image: radial-gradient(rgba(0, 0, 0, 0.3), transparent 70%);
+    mask-image: radial-gradient(rgba(0, 0, 0, 0.9), transparent 70%);
   }
   .skills-wrapper {
     padding-top: 80px;
@@ -67,7 +79,7 @@ import Loadingdots from '../../utils/Loadingdots.astro';
   }
   .author {
     color: var(--light-grey);
-    font-size: clamp(.8rem,1.2rem,1.5rem);
+    font-size: clamp(0.8rem, 1.2rem, 1.5rem);
     width: 100%;
   }
   .skills-container {
@@ -97,7 +109,7 @@ import Loadingdots from '../../utils/Loadingdots.astro';
       justify-content: center;
       align-items: flex-start;
     }
-    .skills-container::after{
+    .skills-container::after {
       content: '';
       background-image: url('../../assets/about-bg2.webp');
       background-repeat: no-repeat;
@@ -125,5 +137,6 @@ import Loadingdots from '../../utils/Loadingdots.astro';
       z-index: 0;
       opacity: 0.1;
     }
+    
   }
 </style>
