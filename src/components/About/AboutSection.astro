@@ -117,13 +117,10 @@ import { Icon } from 'astro-icon/components';
   @media (min-width: 900px) {
     .about-wrapper {
       border: 1px solid var(--grey-font);
-      padding: 50px;
+      padding: 70px;
       border-radius: 7px;
     }
-    .about-container::before {
-      left: 50%;
-      top: 15%;
-    }
+
     .about-header::after {
       content: '';
       background-image: url('../../assets/about-bg2.webp');
@@ -137,6 +134,14 @@ import { Icon } from 'astro-icon/components';
       height: 100%;
       z-index: 0;
       opacity: 0.1;
+    }
+    .about-container {
+      margin-top: 120px;
+      margin-bottom: 120px;
+    }
+    .about-container::before {
+      left: 50%;
+      top: 15%;
     }
     .about-container::after {
       display: none;
