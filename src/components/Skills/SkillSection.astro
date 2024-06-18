@@ -37,13 +37,17 @@ import Loadingdots from '../../utils/Loadingdots.astro';
     position: absolute;
     z-index: -1;
     content: '';
-    top: 30%;
-    height: 40%;
-    width: 40%;
-    left: 30%;
-    background-image: radial-gradient(circle, rgba(78, 161, 70, 1) 0%, rgba(5, 55, 23, 1) 82%);
-    -webkit-mask-image: radial-gradient(rgba(0, 0, 0, 0.3), transparent 70%);
-    mask-image: radial-gradient(rgba(0, 0, 0, 0.9), transparent 70%);
+    bottom: -7%;
+    height: 20%;
+    width: 75%;
+    left: 15%;
+    background-image: radial-gradient(
+      circle,
+      rgba(78, 161, 70, 1) 0%,
+      rgb(42, 82, 56) 82%
+    );
+    -webkit-mask-image: radial-gradient(rgba(0, 0, 0, 0.3), transparent 10%);
+    mask-image: radial-gradient(rgba(0, 0, 0, 0.6), transparent 70%);
   }
   .skills-wrapper {
     padding-top: 80px;
@@ -137,6 +141,21 @@ import Loadingdots from '../../utils/Loadingdots.astro';
       z-index: 0;
       opacity: 0.1;
     }
-    
+    .skills-section::after {
+      position: absolute;
+      z-index: -1;
+      content: '';
+      bottom: -10%;
+      height: 35%;
+      width: 35%;
+      left: 33%;
+      background-image: radial-gradient(
+        circle,
+        rgb(85, 236, 71) 35%,
+        rgb(5, 31, 14) 72%
+      );
+      -webkit-mask-image: radial-gradient(rgba(0, 0, 0, 0.7), transparent 60%);
+      mask-image: radial-gradient(rgba(0, 0, 0, 0.6), transparent 60%);
+    }
   }
 </style>
