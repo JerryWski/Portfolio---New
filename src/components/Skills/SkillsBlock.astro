@@ -29,7 +29,8 @@ const { title, skills } = Astro.props;
 
 <style>
   .skill-block {
-    margin-bottom: 60px;
+    margin-bottom: 85px;
+    min-width: 300px;
   }
   .skill-title {
     font-family: var(--second-font);
@@ -59,7 +60,7 @@ const { title, skills } = Astro.props;
   }
   @media (min-width: 900px) {
     .skill-block {
-      
+      text-align: left;
     }
   }
 </style>

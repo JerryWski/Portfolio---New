@@ -14,7 +14,7 @@ import Loadingdots from '../../utils/Loadingdots.astro';
     </h3>
     <h4 class='skills-quote author'>Winston Churchill</h4>
 
-    <div class='skill-container'>
+    <div class='skills-container'>
       {
         skillsBlock.map((block) => (
           <SkillsBlock title={block.title} skills={block.skills} />
@@ -62,16 +62,19 @@ import Loadingdots from '../../utils/Loadingdots.astro';
     font-style: italic;
   }
   .title {
-    font-size: clamp(1.7rem, 2.5vw, 2.4rem);
+    font-size: clamp(1.4rem, 2.2vw, 2.4rem);
     text-wrap: balance;
   }
   .author {
     color: var(--light-grey);
-    font-size: 1.5rem;
+    font-size: clamp(.8rem,1.2rem,1.5rem);
     width: 100%;
   }
-  .skill-container {
+  .skills-container {
     margin-top: 80px;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 80px;
   }
   @media (min-width: 900px) {
     .skills-wrapper {
@@ -84,14 +87,43 @@ import Loadingdots from '../../utils/Loadingdots.astro';
       margin-right: 100px;
       text-align: right;
     }
-    .skill-container {
+    .skills-container {
       margin: 120px auto 0 auto;
       display: flex;
       max-width: 1240px;
       column-gap: 80px;
       flex-wrap: wrap;
+      position: relative;
       justify-content: center;
       align-items: flex-start;
+    }
+    .skills-container::after{
+      content: '';
+      background-image: url('../../assets/about-bg2.webp');
+      background-repeat: no-repeat;
+      background-position: center;
+      transform: rotate(90deg);
+      width: 100%;
+      position: absolute;
+      left: -60%;
+      top: 0%;
+      height: 100%;
+      z-index: 0;
+      opacity: 0.1;
+    }
+    .skills-container::before {
+      content: '';
+      background-image: url('../../assets/about-bg2.webp');
+      background-repeat: no-repeat;
+      background-position: center;
+      transform: rotate(-90deg);
+      width: 100%;
+      position: absolute;
+      right: -60%;
+      top: 0%;
+      height: 100%;
+      z-index: 0;
+      opacity: 0.1;
     }
   }
 </style>
