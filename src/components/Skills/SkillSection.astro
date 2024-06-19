@@ -43,7 +43,7 @@ import Loadingdots from '../../utils/Loadingdots.astro';
     left: 9%;
     background-image: radial-gradient(
       circle,
-      rgba(78, 161, 70, 1) 0%,
+      rgb(60, 231, 126) 0%,
       rgb(42, 82, 56) 82%
     );
     -webkit-mask-image: radial-gradient(rgba(0, 0, 0, 0.3), transparent 10%);
@@ -95,22 +95,6 @@ import Loadingdots from '../../utils/Loadingdots.astro';
   @media (min-width: 900px) {
     .skills-wrapper {
       text-align: center;
-    }
-    .skills-wrapper::before {
-      /* content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: radial-gradient(
-        circle at var(--x) var(--y),
-        #1ea95a 0%,
-        #1a1c20 10%
-      );
-      opacity: 0.3;
-      pointer-events: none;
-      z-index: -10; */
     }
     .skills-theme-pointer {
       margin: 0 auto;
@@ -191,11 +175,11 @@ import Loadingdots from '../../utils/Loadingdots.astro';
   }
 
   const resetHoverEffect = (wrapper:HTMLElement) => {
-    wrapper.classList.add('hide-before'); // Add class to hide the ::before element
+    wrapper.classList.add('hide-before');
   };
 
   const showHoverEffect = (wrapper:HTMLElement) => {
-    wrapper.classList.remove('hide-before'); // Remove class to show the ::before element
+    wrapper.classList.remove('hide-before');
   };
 
   const skillsSection = document.querySelector('.skills-section');
