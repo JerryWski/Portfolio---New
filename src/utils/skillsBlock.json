@@ -41,35 +41,13 @@
         "icon": "sass2"
       },
       {
-        "name":"TypeScript",
+        "name": "TypeScript",
         "icon": "ts2"
       }
     ]
   },
   {
-    "title": "Bundlers",
-    "skills": [
-        {
-          "name": "Vite",
-          "icon": "vite2"
-        },
-        {
-          "name": "Webpack",
-          "icon": "webpack2"
-        }
-      ]
-  },
-  {
-    "title": "Task Runners",
-    "skills": [
-        {
-          "name": "Gulp",
-          "icon": "gulp2"
-        }
-      ]
-  },
-  {
-  "title": "Design",
+    "title": "Design",
     "skills": [
       {
         "name": "Adobe Photoshop",
@@ -82,6 +60,28 @@
       {
         "name": "Canva",
         "icon": "canva2"
+      }
+    ]
+  },
+  {
+    "title": "Bundlers",
+    "skills": [
+      {
+        "name": "Vite",
+        "icon": "vite2"
+      },
+      {
+        "name": "Webpack",
+        "icon": "webpack2"
+      }
+    ]
+  },
+  {
+    "title": "Task Runners",
+    "skills": [
+      {
+        "name": "Gulp",
+        "icon": "gulp2"
       }
     ]
   }
