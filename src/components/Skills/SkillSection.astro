@@ -33,7 +33,6 @@ import Loadingdots from '../../utils/Loadingdots.astro';
     color: var(--wh);
     overflow: hidden;
   }
-
   .skills-section::after {
     position: absolute;
     z-index: -1;
@@ -98,7 +97,7 @@ import Loadingdots from '../../utils/Loadingdots.astro';
       text-align: center;
     }
     .skills-wrapper::before {
-      content: '';
+      /* content: '';
       position: absolute;
       top: 0;
       left: 0;
@@ -106,11 +105,12 @@ import Loadingdots from '../../utils/Loadingdots.astro';
       bottom: 0;
       background: radial-gradient(
         circle at var(--x) var(--y),
-        #1ea95a 1%,
+        #1ea95a 0%,
         #1a1c20 10%
       );
-      opacity: 0.3; /* Adjust opacity as needed */
+      opacity: 0.3;
       pointer-events: none;
+      z-index: -10; */
     }
     .skills-theme-pointer {
       margin: 0 auto;
@@ -160,11 +160,29 @@ import Loadingdots from '../../utils/Loadingdots.astro';
     .skills-section::after {
       background: none;
     }
+    .skills-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(
+        circle at var(--x) var(--y),
+        #026b43 0%,
+        #1a1c20 10%
+      );
+      opacity: 0.5;
+      pointer-events: none;
+    }
+    .skills-section.hide-before::before {
+      display: none;
+    }
   }
 </style>
 
 <script>
-  function mouseMove(wrapper: any, e: any) {
+  const mouseMove = (wrapper:HTMLElement, e: MouseEvent) => {
     const x = e.clientX - wrapper.getBoundingClientRect().left;
     const y = e.clientY - wrapper.getBoundingClientRect().top;
 
@@ -172,10 +190,23 @@ import Loadingdots from '../../utils/Loadingdots.astro';
     wrapper.style.setProperty('--y', `${y}px`);
   }
 
-  const skillsWrapper = document.querySelector('.skills-wrapper');
-  if (skillsWrapper) {
-    skillsWrapper.addEventListener('mousemove', (e) =>
-      mouseMove(skillsWrapper, e),
+  const resetHoverEffect = (wrapper:HTMLElement) => {
+    wrapper.classList.add('hide-before'); // Add class to hide the ::before element
+  };
+
+  const showHoverEffect = (wrapper:HTMLElement) => {
+    wrapper.classList.remove('hide-before'); // Remove class to show the ::before element
+  };
+
+  const skillsSection = document.querySelector('.skills-section');
+  if (skillsSection instanceof HTMLElement) {
+    skillsSection.addEventListener('mousemove', (e) => {
+      showHoverEffect(skillsSection);
+      mouseMove(skillsSection, e);
+      skillsSection.style.cursor='pointer'
+    });
+    skillsSection.addEventListener('mouseleave', () =>
+      resetHoverEffect(skillsSection),
     );
   }
 </script>
