@@ -33,14 +33,15 @@ import Loadingdots from '../../utils/Loadingdots.astro';
     color: var(--wh);
     overflow: hidden;
   }
+
   .skills-section::after {
     position: absolute;
     z-index: -1;
     content: '';
-    bottom: -5%;
-    height: 16%;
-    width: 80%;
-    left: 11%;
+    bottom: -1%;
+    height: 15%;
+    width: 85%;
+    left: 9%;
     background-image: radial-gradient(
       circle,
       rgba(78, 161, 70, 1) 0%,
@@ -96,6 +97,21 @@ import Loadingdots from '../../utils/Loadingdots.astro';
     .skills-wrapper {
       text-align: center;
     }
+    .skills-wrapper::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(
+        circle at var(--x) var(--y),
+        #1ea95a 1%,
+        #1a1c20 10%
+      );
+      opacity: 0.3; /* Adjust opacity as needed */
+      pointer-events: none;
+    }
     .skills-theme-pointer {
       margin: 0 auto;
     }
@@ -142,20 +158,24 @@ import Loadingdots from '../../utils/Loadingdots.astro';
       opacity: 0.1;
     }
     .skills-section::after {
-      position: absolute;
-      z-index: -1;
-      content: '';
-      bottom: -10%;
-      height: 35%;
-      width: 35%;
-      left: 33%;
-      background-image: radial-gradient(
-        circle,
-        rgb(85, 236, 71) 35%,
-        rgb(5, 31, 14) 72%
-      );
-      -webkit-mask-image: radial-gradient(rgba(0, 0, 0, 0.7), transparent 60%);
-      mask-image: radial-gradient(rgba(0, 0, 0, 0.6), transparent 60%);
+      background: none;
     }
   }
 </style>
+
+<script>
+  function mouseMove(wrapper: any, e: any) {
+    const x = e.clientX - wrapper.getBoundingClientRect().left;
+    const y = e.clientY - wrapper.getBoundingClientRect().top;
+
+    wrapper.style.setProperty('--x', `${x}px`);
+    wrapper.style.setProperty('--y', `${y}px`);
+  }
+
+  const skillsWrapper = document.querySelector('.skills-wrapper');
+  if (skillsWrapper) {
+    skillsWrapper.addEventListener('mousemove', (e) =>
+      mouseMove(skillsWrapper, e),
+    );
+  }
+</script>
