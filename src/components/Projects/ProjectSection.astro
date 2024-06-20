@@ -8,7 +8,7 @@ import OthersCards from './OthersCards.astro';
 
 <section id='projects' class='projects-container'>
   <div class='bg-img-mobile'></div>
-  <Image class='bg-img' src={bg} alt='technology circuits lines' />
+  <Image class='bg-img' loading={'eager'} src={bg} alt='technology circuits lines' />
   <div class='projects-wrapper'>
     <div class='projects-theme-pointer'><Icon name='cogs' />Projects</div>
     <h2 class='projects-header'>
@@ -32,6 +32,7 @@ import OthersCards from './OthersCards.astro';
     background-color: var(--wh);
     position: relative;
     z-index: 0;
+    min-height: 100vh;
     overflow: hidden;
   }
   .bg-img {
@@ -75,6 +76,7 @@ import OthersCards from './OthersCards.astro';
     gap: 5px;
     position: relative;
     z-index: 1;
+    align-items: center;
     color: var(--grey-font);
     font-family: var(--second-font);
   }

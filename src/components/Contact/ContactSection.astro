@@ -1,14 +1,88 @@
 ---
-
+import { Icon } from 'astro-icon/components';
+import { Image } from 'astro:assets';
+import bg from '../../assets/projects-bg.webp';
 ---
 
-<section class="contact-section">
-    <h2>Kontakt</h2>
+<section id='contact' class='contact-section'>
+  <div class='bg-img-mobile'></div>
+  <Image
+    class='bg-img'
+    loading={'eager'}
+    src={bg}
+    alt='technology circuits lines'
+  />
+  <div class='contact-wrapper'>
+    <div class='contact-theme-pointer'><Icon name='contact' />Contact</div>
+    <h2 class='contact-header'>
+      &lt; /<span class='span-header'>Contact</span> &gt;
+    </h2>
+  </div>
 </section>
 
 <style>
-section {
-    height: 400px;
+  .contact-section {
+    padding: 80px 20px 80px;
+    color: var(--bg-graff);
     background-color: var(--wh);
-}
+    position: relative;
+    background-color: var(--wh);
+  }
+  .contact-theme-pointer {
+    display: flex;
+    border: 2px solid var(--grey-font);
+    width: fit-content;
+    padding: 3px 10px;
+    border-radius: 7px;
+    gap: 5px;
+    position: relative;
+    align-items: center;
+    z-index: 1;
+    color: var(--grey-font);
+    font-family: var(--second-font);
+  }
+  .contact-header {
+    font-size: 2rem;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+    font-family: var(--main-font);
+  }
+  .contact-header .span-header {
+    color: var(--green);
+  }
+  .bg-img {
+    display: none;
+  }
+  .bg-img-mobile {
+    position: absolute;
+    background-image: url('/projects-bg-mobile.webp');
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    opacity: 0.2;
+  }
+  @media (min-width: 900px) {
+    .contact-wrapper {
+      max-width: 1440px;
+      margin-inline: auto;
+    }
+    .bg-img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      display: block;
+      z-index: 0;
+      opacity: 0.2;
+      object-fit: cover;
+    }
+    .bg-img-mobile {
+      display: none;
+    }
+  }
 </style>

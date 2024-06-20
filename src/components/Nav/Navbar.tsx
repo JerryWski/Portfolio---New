@@ -21,13 +21,13 @@ const Navbar: React.FC = () => {
             <a href='/#about'>_about</a>
           </li>
           <li className='nav-list_item'>
-            <a href='/'>_skills</a>
+            <a href='/#skills'>_skills</a>
           </li>
           <li className='nav-list_item'>
             <a href='/#projects'>_projects</a>
           </li>
           <li className='nav-list_item'>
-            <a href='/'>_contact</a>
+            <a href='/#contact'>_contact</a>
           </li>
         </ul>
         <ul className={`nav-list mobile ${isActive ? 'is-active' : ''}`}>
@@ -38,13 +38,13 @@ const Navbar: React.FC = () => {
             <a href='/#about'>_o mnie</a>
           </li>
           <li className='nav-list_item'>
-            <a href='/'>_skills</a>
+            <a href='/#skills'>_skills</a>
           </li>
           <li className='nav-list_item'>
             <a href='/#projects'>_projects</a>
           </li>
           <li className='nav-list_item'>
-            <a href='/'>_contact</a>
+            <a href='/#contact'>_contact</a>
           </li>
         </ul>
       </nav>
