@@ -87,7 +87,7 @@ const ContactForm = () => {
   return (
     <>
       {isMessageSent ? (
-        <p className='send-mail'>Wiadomość została wysłana. Odezwę się!</p>
+        <p className='send-mail'>Message Sent. I'll get back to you!</p>
       ) : (
         <div className='form-wrapper'>
           <form className='form' action='' method='POST' ref={form} onSubmit={sendEmail}>
