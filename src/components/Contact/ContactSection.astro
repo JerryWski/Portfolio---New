@@ -2,6 +2,7 @@
 import { Icon } from 'astro-icon/components';
 import { Image } from 'astro:assets';
 import bg from '../../assets/projects-bg.webp';
+import ContactForm from './ContactForm';
 ---
 
 <section id='contact' class='contact-section'>
@@ -17,6 +18,8 @@ import bg from '../../assets/projects-bg.webp';
     <h2 class='contact-header'>
       &lt; /<span class='span-header'>Contact</span> &gt;
     </h2>
+
+    <ContactForm  client:only="react"/>
   </div>
 </section>
 
