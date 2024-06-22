@@ -59,7 +59,7 @@ const ContactForm = () => {
       id: 1,
       name: 'username',
       type: 'text',
-      placeholder: 'Name',
+      placeholder: 'Your name',
       errorMessage: 'Please enter your name',
       label: '',
       pattern: '^[A-Za-z0-9]{1,20}$',
@@ -69,7 +69,7 @@ const ContactForm = () => {
       id: 2,
       name: 'email',
       type: 'email',
-      placeholder: 'E-mail',
+      placeholder: 'Your e-mail',
       errorMessage: 'Please enter your e-mail',
       label: '',
       required: true,
@@ -87,28 +87,28 @@ const ContactForm = () => {
   return (
     <>
       {isMessageSent ? (
-        <p className='sent-mail'>Wiadomość została wysłana. Odezwę się!</p>
+        <p className='send-mail'>Wiadomość została wysłana. Odezwę się!</p>
       ) : (
         <div className='form-wrapper'>
-          <form action='' method='POST' ref={form} onSubmit={sendEmail}>
-            <div className='form-inputs'>
-              {inputs.map((input) => (
-                <InputsForm
-                  key={input.id}
-                  {...input}
-                  value={values[input.name]}
-                  onChange={onChange}
-                />
-              ))}
-              <textarea
-                name='textareaValue'
-                id='text'
-                placeholder='Message'
-                value={values.textareaValue}
-                onChange={handleTextAreaChange}
-              ></textarea>
-            </div>
-            <button type='submit'>Send</button>
+          <form className='form' action='' method='POST' ref={form} onSubmit={sendEmail}>
+            {inputs.map((input) => (
+              <InputsForm
+                key={input.id}
+                {...input}
+                value={values[input.name]}
+                onChange={onChange}
+              />
+            ))}
+            <textarea
+              className='form-text'
+              name='textareaValue'
+              id='text'
+              placeholder='Message'
+              value={values.textareaValue}
+              onChange={handleTextAreaChange}
+            ></textarea>
+
+            <button className='form-btn' type='submit'>Send</button>
           </form>
         </div>
       )}

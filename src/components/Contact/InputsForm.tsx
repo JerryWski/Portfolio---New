@@ -1,8 +1,9 @@
 import { useState, type ChangeEvent, type HTMLInputTypeAttribute } from 'react';
+import './InputsForm.css';
 
 type Props = {
   placeholder: string;
-  name: HTMLInputTypeAttribute;
+  name: string;
   label: string;
   id: number;
   value: string;
@@ -19,17 +20,18 @@ const InputsForm: React.FC<Props> = (props) => {
   };
 
   return (
-    <>
-      <label htmlFor='name'>{label}</label>
+    <div className='form-inputs'>
+      <label htmlFor={`input-${id}`}>{label}</label>
       <input
+        id={`input-${id}`}
         className='form-input'
         {...inputsProps}
         onChange={onChange}
-        onBlur={handleFocus}
+        onFocus={handleFocus}
+        data-focused={focused.toString()}
       />
       <span className='form-span'>{errorMessage}</span>
-      
-    </>
+    </div>
   );
 };
 
