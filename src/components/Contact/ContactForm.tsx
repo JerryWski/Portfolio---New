@@ -11,6 +11,7 @@ interface FormValues {
 }
 
 const ContactForm = () => {
+  
   const form = useRef<HTMLFormElement>(null);
   const [isMessageSent, setIsMessageSent] = useState(false);
   const [values, setValues] = useState<FormValues>({
@@ -29,7 +30,6 @@ const ContactForm = () => {
 
   const sendEmail = (e: React.FormEvent) => {
     e.preventDefault();
-
     if (form.current) {
       emailjs
         .sendForm(

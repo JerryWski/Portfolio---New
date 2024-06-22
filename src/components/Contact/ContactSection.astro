@@ -19,6 +19,37 @@ import ContactForm from './ContactForm';
       &lt; /<span class='span-header'>Get in Touch</span> &gt;
     </h2>
 
+    <p class="contact-subheader">There are many ways to contact me. The choice is yours.</p>
+
+    <div class='contacts-block'>
+      <a
+        class='icons-links'
+        href='mailto:jarek_wasilewski@yahoo.com'
+        aria-label='link to contact email'
+        ><Icon name='mail' /><span>jarek_wasilewski@yahoo.com</span></a
+      >
+      <a
+        class='icons-links'
+        aria-label='link to contact phone number'
+        href='tel:+48663781576'><Icon name='phone' /><span>663 781 576</span></a
+      >
+    </div>
+
+    <div class='socials-block'>
+      <a
+        class='icons-links'
+        aria-label='link to github profile'
+        href='https://github.com/JerryWski'
+      >
+        <Icon name='github' />
+      </a>
+      <a
+        class='icons-links'
+        aria-label='link to facebook profile'
+        href='https://www.facebook.com/jaro.wasilewski'
+        ><Icon name='facebook' /></a
+      >
+    </div>
     <ContactForm  client:only="react"/>
   </div>
 </section>
@@ -55,6 +86,11 @@ import ContactForm from './ContactForm';
   .contact-header .span-header {
     color: var(--green);
   }
+  .contact-subheader {
+    font-family: var(--main-font);
+    font-size: 1.2rem;
+    line-height: 32px;
+  }
   .bg-img {
     display: none;
   }
@@ -68,10 +104,51 @@ import ContactForm from './ContactForm';
     top: 0;
     opacity: 0.2;
   }
+
+  .contacts-block {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .contacts-block .icons-links {
+    text-decoration: none;
+    display: flex;
+    color: var(--grey-font);
+    align-items: flex-start;
+    gap: 15px;
+    font-family: var(--second-font);
+    font-size: 1.1rem;
+    transition: .3s all ease;
+  }
+  .contacts-block .icons-links:hover {
+    opacity: .7;
+  }
+  .icons-links span {
+    display: flex;
+  }
+  .socials-block {
+    margin-top: 20px;
+    display: flex;
+    column-gap: 20px;
+  }
+  .socials-block .icons-links {
+    transform: scale(1);
+    font-size: 2rem;
+    transition: .3s all ease;
+  }
+  .socials-block .icons-links:hover {
+    opacity: .8;
+    transform: scale(1.5);
+  }
+
+
   @media (min-width: 900px) {
     .contact-wrapper {
       max-width: 1440px;
       margin-inline: auto;
+      position: relative;
+      z-index: 1000;
     }
     .bg-img {
       position: absolute;
@@ -80,7 +157,6 @@ import ContactForm from './ContactForm';
       top: 0;
       left: 0;
       display: block;
-      z-index: 0;
       opacity: 0.2;
       object-fit: cover;
     }
