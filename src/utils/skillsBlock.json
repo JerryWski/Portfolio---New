@@ -13,7 +13,7 @@
     ]
   },
   {
-    "title": "Frameworks",
+    "title": "Frameworks & CMS",
     "skills": [
       {
         "name": "ReactJS",
@@ -22,6 +22,10 @@
       {
         "name": "AstroJS",
         "icon": "astro2"
+      },
+      {
+        "name": "WordPress",
+        "icon": "wp"
       }
     ]
   },

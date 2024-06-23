@@ -39,7 +39,7 @@ const { title, skills } = Astro.props;
     font-size: 4.3ch;
     text-decoration: underline;
     text-decoration-color: var(--light-grey);
-    text-underline-offset: 15px;
+    text-underline-offset: 5px;
     color: var(--green);
     margin-bottom: 40px;
   }
@@ -63,6 +63,9 @@ const { title, skills } = Astro.props;
   @media (min-width: 900px) {
     .skill-block {
       text-align: left;
+    }
+    .skill-title {
+      text-underline-offset: 15px;
     }
   }
 </style>

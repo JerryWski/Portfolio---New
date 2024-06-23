@@ -18,6 +18,9 @@ const ContactForm = () => {
     formState: { errors, isSubmitting },
   } = useForm<FormValues>();
 
+  const [isMessageSent, setIsMessageSent] = useState(false);
+  const [isSending, setIsSending] = useState(false);
+
   const form = useRef<HTMLFormElement>(null);
   const [values, setValues] = useState<FormValues>({
     username: '',
@@ -25,12 +28,8 @@ const ContactForm = () => {
     textareaValue: '',
   });
 
-  const [isMessageSent, setIsMessageSent] = useState(false);
-  const [isSending, setIsSending] = useState(false);
-
   const onSubmit: SubmitHandler<FormValues> = async () => {
-    setIsSending(true); 
-    // await new Promise((resolve) => setTimeout(resolve, 2000));
+    setIsSending(true);
     if (form.current) {
       emailjs
         .sendForm(
@@ -45,14 +44,14 @@ const ContactForm = () => {
             reset({ username: '', email: '' });
             setValues({ ...values, textareaValue: '' });
             setIsMessageSent(true);
-            setIsSending(false);  // Stop spinner
+            setIsSending(false); // Stop spinner
             setTimeout(() => {
               setIsMessageSent(false);
             }, 3000);
           },
           (error) => {
             console.log(error.text);
-            setIsSending(false); 
+            setIsSending(false);
           },
         );
     }
@@ -65,65 +64,75 @@ const ContactForm = () => {
 
   return (
     <>
-    {isMessageSent ? (
+      {isMessageSent ? (
         <p className='send-mail'>Message Sent. I'll get back to you!</p>
       ) : (
-      <div className='form-wrapper'>
-        <form
-          className='form'
-          action=''
-          method='POST'
-          ref={form}
-          onSubmit={handleSubmit(onSubmit)}
-        >
-          <div className='form-inputs'>
-            <label className="sr-only" htmlFor='username'>Your name</label>
-            <input
-              {...register('username', {
-                required: 'Please enter your name',
-              })}
-              className='form-input'
-              id='username'
-              type='text'
-              placeholder='Name'
-            />
-            {errors.username && (
-              <p className='form-error'>{errors.username.message}</p>
-            )}
-          </div>
-          <div className='form-inputs'>
-            <label className="sr-only" htmlFor='email'>Your Email</label>
-            <input
-              {...register('email', {
-                required: 'Please enter your e-mail',
-                validate: (value) => {
-                  if (!value.includes('@')) {
-                    return 'Email must include @';
-                  }
-                  return true;
-                },
-              })}
-              className='form-input'
-              id='email'
-              type='text'
-              placeholder='Email'
-            />
-            {errors.email && <p className='form-error'>{errors.email.message}</p>}
-          </div>
-          <textarea
-            className='form-text'
-            name='textareaValue'
-            id='text'
-            placeholder='Message'
-            value={values.textareaValue}
-            onChange={handleTextAreaChange}
-          ></textarea>
+        <div className='form-wrapper'>
+          <form
+            className='form'
+            action=''
+            method='POST'
+            ref={form}
+            onSubmit={handleSubmit(onSubmit)}
+          >
+            <div className='form-inputs'>
+              <label className='sr-only' htmlFor='username'>
+                Your name
+              </label>
+              <input
+                {...register('username', {
+                  required: 'Please enter your name',
+                })}
+                className='form-input'
+                id='username'
+                type='text'
+                placeholder='Name'
+              />
+              {errors.username && (
+                <p className='form-error'>{errors.username.message}</p>
+              )}
+            </div>
+            <div className='form-inputs'>
+              <label className='sr-only' htmlFor='email'>
+                Your Email
+              </label>
+              <input
+                {...register('email', {
+                  required: 'Please enter your e-mail',
+                  validate: (value) => {
+                    if (!value.includes('@')) {
+                      return 'Email must include @';
+                    }
+                    return true;
+                  },
+                })}
+                className='form-input'
+                id='email'
+                type='text'
+                placeholder='Email'
+              />
+              {errors.email && (
+                <p className='form-error'>{errors.email.message}</p>
+              )}
+            </div>
+            <textarea
+              className='form-text'
+              name='textareaValue'
+              id='text'
+              placeholder='Message'
+              value={values.textareaValue}
+              onChange={handleTextAreaChange}
+            ></textarea>
 
-          <button disabled={isSubmitting} className='form-btn' type='submit'>
-          {isSubmitting || isSending ? <span className='spinner'></span> : 'Send'}
-          </button>
-        </form>
-      </div>
+            <button disabled={isSubmitting} className='form-btn' type='submit'>
+              {isSubmitting || isSending ? (
+                <span className='spinner'></span>
+              ) : (
+                'Send'
+              )}
+            </button>
+          </form>
+        </div>
       )}
     </>
   );
