@@ -1,7 +1,7 @@
 import './ContactForm.css';
 import emailjs from '@emailjs/browser';
-import InputsForm from './InputsForm';
 import { useRef, useState } from 'react';
+import { useForm, type SubmitHandler } from 'react-hook-form';
 
 interface FormValues {
   username: string;
@@ -11,25 +11,26 @@ interface FormValues {
 }
 
 const ContactForm = () => {
-  
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors, isSubmitting },
+  } = useForm<FormValues>();
+
   const form = useRef<HTMLFormElement>(null);
-  const [isMessageSent, setIsMessageSent] = useState(false);
   const [values, setValues] = useState<FormValues>({
     username: '',
     email: '',
     textareaValue: '',
   });
 
-  const clearForm = () => {
-    setValues({
-      username: '',
-      email: '',
-      textareaValue: '',
-    });
-  };
+  const [isMessageSent, setIsMessageSent] = useState(false);
+  const [isSending, setIsSending] = useState(false);
 
-  const sendEmail = (e: React.FormEvent) => {
-    e.preventDefault();
+  const onSubmit: SubmitHandler<FormValues> = async () => {
+    setIsSending(true); 
+    // await new Promise((resolve) => setTimeout(resolve, 2000));
     if (form.current) {
       emailjs
         .sendForm(
@@ -41,76 +42,88 @@ const ContactForm = () => {
         .then(
           (result) => {
             console.log(result.text);
-            clearForm();
+            reset({ username: '', email: '' });
+            setValues({ ...values, textareaValue: '' });
             setIsMessageSent(true);
+            setIsSending(false);  // Stop spinner
             setTimeout(() => {
               setIsMessageSent(false);
             }, 3000);
           },
           (error) => {
             console.log(error.text);
+            setIsSending(false); 
           },
         );
     }
   };
 
-  const inputs = [
-    {
-      id: 1,
-      name: 'username',
-      type: 'text',
-      placeholder: 'Your name',
-      errorMessage: 'Please enter your name',
-      label: '',
-      pattern: '^[A-Za-z0-9]{1,20}$',
-      required: true,
-    },
-    {
-      id: 2,
-      name: 'email',
-      type: 'email',
-      placeholder: 'Your e-mail',
-      errorMessage: 'Please enter your e-mail',
-      label: '',
-      required: true,
-    },
-  ];
-
   const handleTextAreaChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setValues({ ...values, [name]: value });
   };
-  const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setValues({ ...values, [e.target.name]: e.target.value });
-  };
 
   return (
     <>
-      {isMessageSent ? (
+    {isMessageSent ? (
         <p className='send-mail'>Message Sent. I'll get back to you!</p>
       ) : (
-        <div className='form-wrapper'>
-          <form className='form' action='' method='POST' ref={form} onSubmit={sendEmail}>
-            {inputs.map((input) => (
-              <InputsForm
-                key={input.id}
-                {...input}
-                value={values[input.name]}
-                onChange={onChange}
-              />
-            ))}
-            <textarea
-              className='form-text'
-              name='textareaValue'
-              id='text'
-              placeholder='Message'
-              value={values.textareaValue}
-              onChange={handleTextAreaChange}
-            ></textarea>
+      <div className='form-wrapper'>
+        <form
+          className='form'
+          action=''
+          method='POST'
+          ref={form}
+          onSubmit={handleSubmit(onSubmit)}
+        >
+          <div className='form-inputs'>
+            <label className="sr-only" htmlFor='username'>Your name</label>
+            <input
+              {...register('username', {
+                required: 'Please enter your name',
+              })}
+              className='form-input'
+              id='username'
+              type='text'
+              placeholder='Name'
+            />
+            {errors.username && (
+              <p className='form-error'>{errors.username.message}</p>
+            )}
+          </div>
+          <div className='form-inputs'>
+            <label className="sr-only" htmlFor='email'>Your Email</label>
+            <input
+              {...register('email', {
+                required: 'Please enter your e-mail',
+                validate: (value) => {
+                  if (!value.includes('@')) {
+                    return 'Email must include @';
+                  }
+                  return true;
+                },
+              })}
+              className='form-input'
+              id='email'
+              type='text'
+              placeholder='Email'
+            />
+            {errors.email && <p className='form-error'>{errors.email.message}</p>}
+          </div>
+          <textarea
+            className='form-text'
+            name='textareaValue'
+            id='text'
+            placeholder='Message'
+            value={values.textareaValue}
+            onChange={handleTextAreaChange}
+          ></textarea>
 
-            <button className='form-btn' type='submit'>Send</button>
-          </form>
-        </div>
+          <button disabled={isSubmitting} className='form-btn' type='submit'>
+          {isSubmitting || isSending ? <span className='spinner'></span> : 'Send'}
+          </button>
+        </form>
+      </div>
       )}
     </>
   );

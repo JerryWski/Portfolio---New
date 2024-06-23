@@ -19,7 +19,9 @@ import ContactForm from './ContactForm';
       &lt; /<span class='span-header'>Get in Touch</span> &gt;
     </h2>
 
-    <p class="contact-subheader">There are many ways to contact me. The choice is yours.</p>
+    <p class='contact-subheader'>
+      There are many ways to contact me. The choice is yours.
+    </p>
 
     <div class='contacts-block'>
       <a
@@ -50,7 +52,7 @@ import ContactForm from './ContactForm';
         ><Icon name='facebook' /></a
       >
     </div>
-    <ContactForm  client:only="react"/>
+    <ContactForm client:only='react' />
   </div>
 </section>
 
@@ -119,10 +121,10 @@ import ContactForm from './ContactForm';
     gap: 15px;
     font-family: var(--second-font);
     font-size: 1.1rem;
-    transition: .3s all ease;
+    transition: 0.3s all ease;
   }
   .contacts-block .icons-links:hover {
-    opacity: .7;
+    opacity: 0.7;
   }
   .icons-links span {
     display: flex;
@@ -135,20 +137,21 @@ import ContactForm from './ContactForm';
   .socials-block .icons-links {
     transform: scale(1);
     font-size: 2rem;
-    transition: .3s all ease;
+    transition: 0.3s all ease;
   }
   .socials-block .icons-links:hover {
-    opacity: .8;
+    opacity: 0.8;
     transform: scale(1.5);
   }
-
+  .contact-wrapper {
+    position: relative;
+    z-index: 1000;
+  }
 
   @media (min-width: 900px) {
     .contact-wrapper {
       max-width: 1440px;
       margin-inline: auto;
-      position: relative;
-      z-index: 1000;
     }
     .bg-img {
       position: absolute;
