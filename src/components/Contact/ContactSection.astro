@@ -2,9 +2,10 @@
 import { Icon } from 'astro-icon/components';
 import { Image } from 'astro:assets';
 import FooterSection from '../Footer/FooterSection';
-import contactLogo from '../../assets/logo-black2.webp' 
+import contactLogo from '../../assets/logo-black2.webp';
 import bg from '../../assets/projects-bg.webp';
 import ContactForm from './ContactForm';
+import ContactLinks from './ContactLinks.astro';
 ---
 
 <section id='contact' class='contact-section'>
@@ -15,7 +16,7 @@ import ContactForm from './ContactForm';
     src={bg}
     alt='technology circuits lines'
   />
-  <div class="contact-container">
+  <div class='contact-container'>
     <div class='contact-wrapper'>
       <div class='contact-theme-pointer'><Icon name='contact' />Contact</div>
       <h2 class='contact-header'>
@@ -34,7 +35,8 @@ import ContactForm from './ContactForm';
         <a
           class='icons-links'
           aria-label='link to contact phone number'
-          href='tel:+48663781576'><Icon name='phone' /><span>663 781 576</span></a
+          href='tel:+48663781576'
+          ><Icon name='phone' /><span>663 781 576</span></a
         >
       </div>
       <div class='socials-block'>
@@ -54,12 +56,15 @@ import ContactForm from './ContactForm';
       </div>
       <ContactForm client:only='react' />
     </div>
-    <div class="contact-wrapper-right">
+
+    <ContactLinks />
+
+    <div class='contact-wrapper-right'>
       <h2>Let's Work Together!</h2>
-      <Image class='contact-logo' src={contactLogo} alt='logo'/>
+      <Image class='contact-logo' src={contactLogo} alt='logo' />
     </div>
   </div>
-  <FooterSection client:only="'react" />
+  <FooterSection client:only="react" />
 </section>
 
 <style>
@@ -138,7 +143,6 @@ import ContactForm from './ContactForm';
     top: 0;
     opacity: 0.2;
   }
-
   .contacts-block {
     margin-top: 20px;
     display: flex;
@@ -197,6 +201,24 @@ import ContactForm from './ContactForm';
     }
     .bg-img-mobile {
       display: none;
+    }
+    .contact-container {
+      justify-content: center;
+      align-items: center;
+      flex-direction: row;
+    }
+    .contact-wrapper {
+      margin-inline: 0;
+    }
+    .contact-wrapper,
+    .contact-wrapper-right {
+      max-width: 50%;
+    }
+    .contact-wrapper-right {
+      margin-top: 0;
+    }
+    .contact-wrapper-right h2 {
+      font-size: 3.2rem;
     }
   }
 </style>
