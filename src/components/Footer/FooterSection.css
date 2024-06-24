@@ -1,0 +1,27 @@
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: clamp(0.9rem, 1vw, 2.2rem);
+  font-family: var(--second-font);
+  color: var(--grey-font);
+  padding: 5px 0 12px 0;
+  position: relative;
+  font-weight: 700;
+  flex-direction: column;
+  margin-top: 40px;
+  width: 100%;
+  border-top: 2px solid var(--grey-font);
+}
+.footer_link {
+  color: var(--green);
+  text-decoration: none;
+}
+.footer_link:hover {
+  opacity: 0.7;
+}
+@media (min-width: 900px) {
+  .footer {
+    padding: 12px 0 12px 0;
+  }
+}

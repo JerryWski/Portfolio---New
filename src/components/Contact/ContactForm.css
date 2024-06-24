@@ -78,7 +78,7 @@
   text-transform: uppercase;
 }
 .form-error {
-    font-size: .8rem;
+    font-size: .9rem;
     font-family: var(--second-font);
     color: hsl(0, 54%, 48%);
     padding-bottom: 5px;

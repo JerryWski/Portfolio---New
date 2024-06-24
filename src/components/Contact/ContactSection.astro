@@ -1,6 +1,8 @@
 ---
 import { Icon } from 'astro-icon/components';
 import { Image } from 'astro:assets';
+import FooterSection from '../Footer/FooterSection';
+import contactLogo from '../../assets/logo-black2.webp' 
 import bg from '../../assets/projects-bg.webp';
 import ContactForm from './ContactForm';
 ---
@@ -13,47 +15,51 @@ import ContactForm from './ContactForm';
     src={bg}
     alt='technology circuits lines'
   />
-  <div class='contact-wrapper'>
-    <div class='contact-theme-pointer'><Icon name='contact' />Contact</div>
-    <h2 class='contact-header'>
-      &lt; /<span class='span-header'>Get in Touch</span> &gt;
-    </h2>
-
-    <p class='contact-subheader'>
-      There are many ways to contact me. The choice is yours.
-    </p>
-
-    <div class='contacts-block'>
-      <a
-        class='icons-links'
-        href='mailto:jarek_wasilewski@yahoo.com'
-        aria-label='link to contact email'
-        ><Icon name='mail' /><span>jarek_wasilewski@yahoo.com</span></a
-      >
-      <a
-        class='icons-links'
-        aria-label='link to contact phone number'
-        href='tel:+48663781576'><Icon name='phone' /><span>663 781 576</span></a
-      >
+  <div class="contact-container">
+    <div class='contact-wrapper'>
+      <div class='contact-theme-pointer'><Icon name='contact' />Contact</div>
+      <h2 class='contact-header'>
+        &lt; /<span class='span-header'>Get in Touch</span> &gt;
+      </h2>
+      <p class='contact-subheader'>
+        There are many ways to contact me. The choice is yours.
+      </p>
+      <div class='contacts-block'>
+        <a
+          class='icons-links'
+          href='mailto:jarek_wasilewski@yahoo.com'
+          aria-label='link to contact email'
+          ><Icon name='mail' /><span>jarek_wasilewski@yahoo.com</span></a
+        >
+        <a
+          class='icons-links'
+          aria-label='link to contact phone number'
+          href='tel:+48663781576'><Icon name='phone' /><span>663 781 576</span></a
+        >
+      </div>
+      <div class='socials-block'>
+        <a
+          class='icons-links'
+          aria-label='link to github profile'
+          href='https://github.com/JerryWski'
+        >
+          <Icon name='github' />
+        </a>
+        <a
+          class='icons-links'
+          aria-label='link to facebook profile'
+          href='https://www.facebook.com/jaro.wasilewski'
+          ><Icon name='facebook' /></a
+        >
+      </div>
+      <ContactForm client:only='react' />
     </div>
-
-    <div class='socials-block'>
-      <a
-        class='icons-links'
-        aria-label='link to github profile'
-        href='https://github.com/JerryWski'
-      >
-        <Icon name='github' />
-      </a>
-      <a
-        class='icons-links'
-        aria-label='link to facebook profile'
-        href='https://www.facebook.com/jaro.wasilewski'
-        ><Icon name='facebook' /></a
-      >
+    <div class="contact-wrapper-right">
+      <h2>Let's Work Together!</h2>
+      <Image class='contact-logo' src={contactLogo} alt='logo'/>
     </div>
-    <ContactForm client:only='react' />
   </div>
+  <FooterSection client:only="'react" />
 </section>
 
 <style>
@@ -63,6 +69,32 @@ import ContactForm from './ContactForm';
     background-color: var(--wh);
     position: relative;
     background-color: var(--wh);
+  }
+  .contact-container {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 100;
+  }
+  .contact-wrapper-right {
+    margin-top: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .contact-wrapper-right h2 {
+    font-family: var(--main-font);
+    font-size: 2.2rem;
+    color: var(--grey-font);
+    text-align: center;
+    letter-spacing: 2px;
+  }
+  .contact-logo {
+    margin-top: 40px;
+    object-fit: contain;
+    max-width: 70%;
+    height: auto;
   }
   .contact-theme-pointer {
     display: flex;
