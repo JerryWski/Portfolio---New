@@ -6,6 +6,7 @@ import contactLogo from '../../assets/logo-black2.webp';
 import bg from '../../assets/projects-bg.webp';
 import ContactForm from './ContactForm';
 import ContactLinks from './ContactLinks.astro';
+import ContactCta from './ContactCta';
 ---
 
 <section id='contact' class='contact-section'>
@@ -56,11 +57,8 @@ import ContactLinks from './ContactLinks.astro';
       </div>
       <ContactForm client:only='react' />
     </div>
-
-    <ContactLinks />
-
     <div class='contact-wrapper-right'>
-      <h2>Let's Work Together!</h2>
+      <ContactCta client:only="react" />
       <Image class='contact-logo' src={contactLogo} alt='logo' />
     </div>
   </div>
