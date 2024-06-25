@@ -8,17 +8,37 @@
 }
 
 .word {
+    color: var(--grey-font);
   font-size: 3rem;
   font-family: var(--main-font);
   text-align: center;
+  font-weight: 900;
   margin-top: 40px;
 }
 
 .letter {
-  color: var(--green);
+  display: inline-flex;
+  align-items: center;
   cursor: pointer;
+  margin: 0 5px;
+  position: relative;
+  width: 50px;
+  height: 30px;
+  background: none;
+  border: none;
+  outline: 1px solid var(--green);
+  border-radius: 25px;
 }
-
+.custom-radio {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: var(--green);
+  display: inline-block;
+  position: absolute;
+  right: 0;
+  transition: transform 0.3s ease;
+}
 .slider {
   width: 200px;
   background: transparent;

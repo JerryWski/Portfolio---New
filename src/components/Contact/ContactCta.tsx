@@ -32,9 +32,13 @@ const ContactCta = () => {
         </ul>
         <div className='word'>
           Let's W
-          <span className='letter' onClick={handleToggle}>
-            o
-          </span>
+          <button className='letter' onClick={handleToggle}>
+          <motion.span 
+            className='custom-radio'
+            animate={{ x: isOpen ? -20 : 0 }}
+            transition={{ duration: 0.3 }}
+          ></motion.span>
+        </button>
           rk Together
         </div>
         <motion.div
