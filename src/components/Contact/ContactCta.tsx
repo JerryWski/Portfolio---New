@@ -1,9 +1,21 @@
-import { motion } from 'framer-motion';
-import { useState } from 'react';
+import { motion, useInView  } from 'framer-motion';
+import { useState, useRef, useEffect } from 'react';
 import './ContactCta.css';
 
 const ContactCta = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [triggered, setTriggered] = useState(false);
+  const ref = useRef(null)
+  const isInView = useInView(ref, { margin: '-200px 0px' })
+
+  useEffect(() => {
+    if (isInView) {
+      setTriggered(true);
+      setIsOpen(true);
+    } else {
+      setIsOpen(false);
+    }
+  }, [isInView]);
 
   const links = [
     { href: '/', text: 'Home' },
@@ -16,8 +28,8 @@ const ContactCta = () => {
     setIsOpen(!isOpen);
   };
   return (
-    <div>
-      <div className='container'>
+    <>
+      <div ref={ref} className='container'>
         <ul className='link-list'>
           {links.map((link, index) => (
             <motion.li
@@ -48,7 +60,7 @@ const ContactCta = () => {
           transition={{ duration: 0.5 }}
         ></motion.div>
       </div>
-    </div>
+    </>
   );
 };
 
