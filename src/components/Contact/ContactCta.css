@@ -8,7 +8,7 @@
 }
 
 .word {
-  color: var(--grey-font);
+  color: var(--bg-graff);
   font-size: 3rem;
   font-family: var(--main-font);
   text-align: center;
@@ -50,7 +50,18 @@
   top: 60px;
   overflow: hidden;
 }
-
+.lists-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.link-sh {
+  font-family: var(--main-font);
+  margin-bottom: 10px;
+  color: var(--bg-graff);
+  font-size: clamp(1rem, 1.5rem, 2rem);
+}
 .link-list {
   display: flex;
   gap: 35px;
@@ -62,9 +73,11 @@
 }
 .link-list li {
   margin: 5px 0;
+  font-size: clamp(1rem, 1.2rem, 2rem);
   font-weight: 900;
+ 
 }
 .link-list a {
   text-decoration: none;
-  color: #333;
+  color: var(--green);
 }
