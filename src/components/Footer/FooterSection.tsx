@@ -17,7 +17,7 @@ const FooterSection: React.FC = () => {
           >
             Jerry_Wski
           </a>
-          &nbsp; Wszelkie prawa zastrzeżone
+          &nbsp; All Rights Reserved
         </p>
       </div>
     </>
