@@ -42,6 +42,10 @@ const { title, skills } = Astro.props;
     text-underline-offset: 5px;
     color: var(--green);
     margin-bottom: 40px;
+    transition: text-shadow 0.3s ease-in-out;
+  }
+  .skill-block:hover .skill-title {
+    text-shadow: 0 0 15px var(--green);
   }
   .skill-list {
     list-style: none;

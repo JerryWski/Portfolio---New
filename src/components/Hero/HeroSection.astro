@@ -97,8 +97,7 @@ import ContactIcons from '../../utils/ContactIcons.astro';
   }
   .hero-section::before {
     background-image: url('/wheels.webp');
-    animation: glow 6s ease-out infinite both;
-    opacity: 0;
+    opacity: 0.1;
   }
   .wrapper {
     display: flex;
@@ -244,6 +243,9 @@ import ContactIcons from '../../utils/ContactIcons.astro';
     .hero-section::after,
     .hero-section::before {
       top: -22px;
+    }
+    .hero-section::before {
+      animation: glow 6s ease-out infinite both;
     }
     .hero-container {
       max-width: 60%;
