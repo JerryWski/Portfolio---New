@@ -7,8 +7,26 @@ const Navbar: React.FC = () => {
   const [isActive, setIsActive] = useState(false);
 
   const animateBurger = () => {
-    setIsActive((prev) => !prev);
+    setIsActive((prev) => {
+      if (!prev) {
+        document.body.classList.add('sticky-body');
+      } else {
+        document.body.classList.remove('sticky-body');
+      }
+      return !prev;
+    });
   };
+
+  const handleLinkClick = () => {
+    setIsActive(false);
+    document.body.classList.remove('sticky-body');
+  };
+
+  useEffect(() => {
+    return () => {
+      document.body.classList.remove('sticky-body');
+    };
+  }, []);
 
   removeSideBar(() => setIsActive(false));
 
@@ -32,19 +50,19 @@ const Navbar: React.FC = () => {
         </ul>
         <ul className={`nav-list mobile ${isActive ? 'is-active' : ''}`}>
           <li className='nav-list_item'>
-            <a href='/'>Home</a>
+            <a onClick={handleLinkClick} href='/'>Home</a>
           </li>
           <li className='nav-list_item'>
-            <a href='/#about'>_o mnie</a>
+            <a onClick={handleLinkClick} href='/#about'>_o mnie</a>
           </li>
           <li className='nav-list_item'>
-            <a href='/#skills'>_skills</a>
+            <a onClick={handleLinkClick} href='/#skills'>_skills</a>
           </li>
           <li className='nav-list_item'>
-            <a href='/#projects'>_projects</a>
+            <a onClick={handleLinkClick} href='/#projects'>_projects</a>
           </li>
           <li className='nav-list_item'>
-            <a href='/#contact'>_contact</a>
+            <a onClick={handleLinkClick} href='/#contact'>_contact</a>
           </li>
         </ul>
       </nav>
