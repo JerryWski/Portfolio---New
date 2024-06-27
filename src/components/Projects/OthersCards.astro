@@ -125,6 +125,13 @@ import app4 from '../../assets/app4.webp';
     grid-template-rows: subgrid;
     grid-row: span 4;
     gap: 0px;
+    opacity: 0;
+    transform: translateY(-200px) scale(.3);
+    transition: transform 0.4s, opacity 0.4s;
+  }
+  .others-wrapper.visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
   }
   .other {
     box-shadow: 0px 8px 17px -10px rgba(177, 182, 177, 1);
@@ -177,3 +184,31 @@ import app4 from '../../assets/app4.webp';
     }
   }
 </style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+  
+  const others = document.querySelectorAll('.others-wrapper');
+
+  const observerOptions = {
+    root: null,
+    rootMargin: '-100px',
+    threshold: 0.2
+  };
+
+ 
+
+  const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+  others.forEach(other => {
+      observer.observe(other);
+    })
+  });
+</script>
