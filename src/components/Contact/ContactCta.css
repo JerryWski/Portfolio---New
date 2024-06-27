@@ -4,6 +4,7 @@
   flex-direction: column;
   justify-content: center;
   position: relative;
+  overflow: hidden;
   z-index: 1000;
 }
 
@@ -40,7 +41,6 @@
   transition: transform 0.3s ease;
 }
 .slider {
-  width: 200px;
   background: transparent;
   padding: 10px;
   border-radius: 8px;
