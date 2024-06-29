@@ -52,7 +52,7 @@ const ContactCta = () => {
         </motion.div>
         <div className='word'>
           Let's W
-          <button className='letter' onClick={handleToggle}>
+          <button aria-label='shortcuts switcher' className='letter' onClick={handleToggle}>
             <motion.span
               className='custom-radio'
               animate={{ x: isOpen ? -20 : 0 }}
