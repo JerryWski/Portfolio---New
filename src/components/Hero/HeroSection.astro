@@ -30,7 +30,7 @@ import ContactIcons from '../../utils/ContactIcons.astro';
       </div>
     </div>
     <button class='btn-hero'
-      ><a class='btn-hero--link' aria-label='link to contact list' href='/'
+      ><a class='btn-hero--link' aria-label='link to contact list' href='#contact'
         >Hire me</a
       >
     </button>
@@ -67,7 +67,7 @@ import ContactIcons from '../../utils/ContactIcons.astro';
       #256435 15%,
       transparent
     );
-    top: 80px;
+    top: 45px;
     left: 0;
   }
   .hero-section {
@@ -91,7 +91,8 @@ import ContactIcons from '../../utils/ContactIcons.astro';
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    gap: 10px;
+    column-gap: 120px;
+    row-gap: 20px;
   }
   .btn-hero {
     display: block;
@@ -162,6 +163,9 @@ import ContactIcons from '../../utils/ContactIcons.astro';
     position: relative;
     z-index: 1;
     font-family: var(--second-font);
+  }
+  .hero-container {
+   
   }
   .hero-image--wrapper {
     max-width: 200px;
@@ -236,10 +240,13 @@ import ContactIcons from '../../utils/ContactIcons.astro';
   }
 
   @media (min-width: 900px) {
+    .block {
+      overflow: hidden;
+    }
     .block::after {
-      top: 15%;
-      height: 500px;
-      left: 28%;
+      top: -21%;
+    height: 748px;
+    left: 28%;
     }
     .hero-section {
       background-color: transparent;

@@ -58,13 +58,25 @@ import { Icon } from 'astro-icon/components';
     gap: 5px;
     font-size: 1.2rem;
     font-family: var(--second-font);
+    transition: .3s color ease;
   }
   .icons-links span {
     display: none;
   }
+  .icons-links:hover {
+    color: var(--green);
+  }
   .social-wrapper {
     display: flex;
     gap: 10px;
+  }
+  .social-wrapper .icons-links {
+    transform: scale(1);
+    transition: .2s all ease;
+    opacity: .8;
+  }
+  .social-wrapper .icons-links:hover {
+    transform: scale(1.2);
   }
   @media (min-width: 900px) {
     .icons-container {
