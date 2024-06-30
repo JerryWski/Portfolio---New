@@ -7,29 +7,29 @@
 </button>
 
 <style>
+  .btn {
+    margin-top: 70px;
+    display: none;
+    cursor: pointer;
+    padding: 20px 80px;
+    border-radius: 15px;
+    background-color: var(--green);
+    border: none;
+    transition: 0.3s background-color ease-in-out;
+  }
+  .btn:hover {
+    background-color: var(--wh);
+  }
+  .btn-link {
+    text-decoration: none;
+    font-family: var(--second-font);
+    font-size: 2rem;
+    color: var(--bg-black);
+  }
+  @media (min-width: 900px) {
+    
     .btn {
-        margin-top: 70px;
-        position: relative;
-        z-index: 2;
-        display: none;        cursor: pointer;
-        padding: 20px 80px;
-        border-radius: 15px;
-        background-color: var(--green);
-        border: none;
-        transition: .3s background-color ease-in-out;
+      display: block;
     }
-    .btn:hover {
-        background-color: var(--wh);
-    }
-    .btn-link {
-        text-decoration: none;
-        font-family: var(--second-font);
-        font-size: 2rem;
-        color: var(--bg-black);
-    }
-    @media (min-width:900px) {
-        .btn {
-            display: block;
-        }
-    }
+  }
 </style>

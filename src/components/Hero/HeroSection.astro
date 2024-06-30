@@ -15,10 +15,10 @@ import ContactIcons from '../../utils/ContactIcons.astro';
           Web Developer
         </h1>
         <p class='hero-subheading'>
-          Passionate about coding beautiful things, I love my work. Let's
-          collaborate and create something amazing!
+          Passionate about coding beautiful things. Let's collaborate and create
+          something amazing!
         </p>
-        <Button />
+        <Button id="btn" />
       </div>
       <div class='hero-image--wrapper'>
         <Image
@@ -44,42 +44,17 @@ import ContactIcons from '../../utils/ContactIcons.astro';
     position: relative;
   }
   .block::after {
-    position: absolute;
-    background: linear-gradient(
-      159deg,
-      rgb(33, 68, 30) 2%,
-      rgb(8, 17, 26) 100%
-    );
-    -webkit-mask-image: linear-gradient(rgba(0, 0, 0, 0.7), transparent 70%);
-    mask-image: linear-gradient(rgba(0, 0, 0, 0.7), transparent 70%);
-    z-index: 0;
-    content: '';
-    top: -20%;
-    height: 52%;
-    width: 100%;
-    left: 0%;
-    transition: none;
-  }
-  .hero-section {
-    padding: 20px;
-    max-width: 1440px;
-    margin: 0 auto;
-    background-color: var(--bg-graff);
-    position: relative;
-  }
-  .hero-section::after,
-  .hero-section::before {
     content: '';
     position: absolute;
     background-image: url('/hero-bg2.webp');
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center -90px;
+    background-position: center 137px;
     width: 100%;
     transform: scaleX(-1);
-    height: 100%;
+    height: 65%;
     z-index: 0;
-    opacity: 0.05;
+    opacity: 0.1;
     -webkit-mask-image: linear-gradient(
       to bottom,
       transparent 1%,
@@ -95,9 +70,22 @@ import ContactIcons from '../../utils/ContactIcons.astro';
     top: 80px;
     left: 0;
   }
-  .hero-section::before {
-    background-image: url('/wheels.webp');
-    opacity: 0.1;
+  .hero-section {
+    padding: 20px;
+    max-width: 1440px;
+    margin: 0 auto;
+    background-color: var(--bg-graff);
+    position: relative;
+    mask-image: radial-gradient(
+        circle,
+        rgba(0, 0, 0, 1) 70%,
+        rgba(0, 0, 0, 0) 100%
+      );
+      -webkit-mask-image: radial-gradient(
+        circle,
+        rgba(0, 0, 0, 1) 90%,
+        rgba(199, 146, 146, 0) 100%
+      );
   }
   .wrapper {
     display: flex;
@@ -133,12 +121,34 @@ import ContactIcons from '../../utils/ContactIcons.astro';
     font-weight: 900;
     z-index: 100;
     position: relative;
-    font-size: clamp(2.3rem, 3vw + 1rem, 3.1rem);
+    font-size: clamp(2.4rem, 3vw + 1.4rem, 4.2rem);
     padding-top: 40px;
-    max-width: 450px;
     text-wrap: balance;
-    line-height: 62px;
-    /* width: fit-content; */
+    line-height: 64px;
+  }
+  .hero-heading::before,
+  .hero-heading::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+
+  .hero-heading::before {
+    background: rgb(26, 28, 32);
+    animation: typewriter var(--typewriterSpeed)
+      steps(var(--typewriterCharacters)) 1s forwards;
+  }
+
+  .hero-heading::after {
+    width: 0.125em;
+    background: rgb(6, 196, 116);
+    animation:
+      typewriter var(--typewriterSpeed) steps(var(--typewriterCharacters)) 1s
+        forwards,
+      blink 550ms steps(var(--typewriterCharacters)) infinite;
   }
   .hero-heading span {
     color: var(--green);
@@ -147,7 +157,7 @@ import ContactIcons from '../../utils/ContactIcons.astro';
     color: var(--light-grey);
     font-weight: 600;
     max-width: 380px;
-    font-size: clamp(.8rem, .8vw + .8rem, 1.2rem);
+    font-size: clamp(0.8rem, 0.8vw + 0.8rem, 1.2rem);
     margin-top: 20px;
     position: relative;
     z-index: 1;
@@ -227,9 +237,13 @@ import ContactIcons from '../../utils/ContactIcons.astro';
 
   @media (min-width: 900px) {
     .block::after {
-      top: -25%;
+      top: 15%;
+      height: 500px;
+      left: 28%;
     }
     .hero-section {
+      background-color: transparent;
+      
       mask-image: radial-gradient(
         circle,
         rgba(0, 0, 0, 1) 70%,
@@ -248,17 +262,20 @@ import ContactIcons from '../../utils/ContactIcons.astro';
     .hero-section::before {
       animation: glow 6s ease-out infinite both;
     }
+    .wrapper {
+      gap: 190px;
+    }
     .hero-container {
-      max-width: 60%;
+      max-width: 50%;
     }
     .btn-hero {
       display: none;
     }
     .hero-heading {
       display: block;
-      font-size: 5rem;
+      /* font-size: 5rem; */
       max-width: 100%;
-      line-height: normal;
+      line-height: 83px;
     }
     .hero-subheading {
       max-width: 100%;
@@ -268,6 +285,7 @@ import ContactIcons from '../../utils/ContactIcons.astro';
     .hero-image--wrapper {
       max-width: 300px;
       margin-top: 80px;
+      margin-right: 20px;
     }
     .hero-line {
       margin-top: 80px;
@@ -293,6 +311,18 @@ import ContactIcons from '../../utils/ContactIcons.astro';
     }
     100% {
       opacity: 0.1;
+    }
+  }
+
+  @keyframes typewriter {
+    to {
+      left: 100%;
+    }
+  }
+
+  @keyframes blink {
+    to {
+      background: transparent;
     }
   }
 </style>
