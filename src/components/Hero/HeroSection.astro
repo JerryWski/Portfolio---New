@@ -133,11 +133,12 @@ import ContactIcons from '../../utils/ContactIcons.astro';
     font-weight: 900;
     z-index: 100;
     position: relative;
-    font-size: clamp(3rem, 3vw, 3.1rem);
+    font-size: clamp(2.3rem, 3vw + 1rem, 3.1rem);
     padding-top: 40px;
     max-width: 450px;
     text-wrap: balance;
     line-height: 62px;
+    /* width: fit-content; */
   }
   .hero-heading span {
     color: var(--green);
@@ -145,8 +146,8 @@ import ContactIcons from '../../utils/ContactIcons.astro';
   .hero-subheading {
     color: var(--light-grey);
     font-weight: 600;
-    /* text-wrap: balance; */
     max-width: 380px;
+    font-size: clamp(.8rem, .8vw + .8rem, 1.2rem);
     margin-top: 20px;
     position: relative;
     z-index: 1;
