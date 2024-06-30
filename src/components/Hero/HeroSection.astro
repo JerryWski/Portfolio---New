@@ -18,7 +18,7 @@ import ContactIcons from '../../utils/ContactIcons.astro';
           Passionate about coding beautiful things. Let's collaborate and create
           something amazing!
         </p>
-        <Button id="btn" />
+        <Button id='btn' />
       </div>
       <div class='hero-image--wrapper'>
         <Image
@@ -30,8 +30,10 @@ import ContactIcons from '../../utils/ContactIcons.astro';
       </div>
     </div>
     <button class='btn-hero'
-      ><a class='btn-hero--link' aria-label='link to contact list' href='#contact'
-        >Hire me</a
+      ><a
+        class='btn-hero--link'
+        aria-label='link to contact list'
+        href='#contact'>Hire me</a
       >
     </button>
     <div class='hero-line'></div>
@@ -77,15 +79,15 @@ import ContactIcons from '../../utils/ContactIcons.astro';
     background-color: var(--bg-graff);
     position: relative;
     mask-image: radial-gradient(
-        circle,
-        rgba(0, 0, 0, 1) 70%,
-        rgba(0, 0, 0, 0) 100%
-      );
-      -webkit-mask-image: radial-gradient(
-        circle,
-        rgba(0, 0, 0, 1) 90%,
-        rgba(199, 146, 146, 0) 100%
-      );
+      circle,
+      rgba(0, 0, 0, 1) 70%,
+      rgba(0, 0, 0, 0) 100%
+    );
+    -webkit-mask-image: radial-gradient(
+      circle,
+      rgba(0, 0, 0, 1) 90%,
+      rgba(199, 146, 146, 0) 100%
+    );
   }
   .wrapper {
     display: flex;
@@ -149,7 +151,8 @@ import ContactIcons from '../../utils/ContactIcons.astro';
     animation:
       typewriter var(--typewriterSpeed) steps(var(--typewriterCharacters)) 1s
         forwards,
-      blink 550ms steps(var(--typewriterCharacters)) infinite;
+      blink 550ms steps(var(--typewriterCharacters)) infinite,
+      disappear 1s steps(24) var(--typewriterSpeed) forwards;
   }
   .hero-heading span {
     color: var(--green);
@@ -163,9 +166,11 @@ import ContactIcons from '../../utils/ContactIcons.astro';
     position: relative;
     z-index: 1;
     font-family: var(--second-font);
+    opacity: 0;
+    transform: translateY(3rem);
+    animation: fadeInUp 1s ease calc(var(--typewriterSpeed) + 2s) forwards;
   }
   .hero-container {
-   
   }
   .hero-image--wrapper {
     max-width: 200px;
@@ -186,7 +191,7 @@ import ContactIcons from '../../utils/ContactIcons.astro';
   .hero-image--wrapper::after {
     content: '';
     position: absolute;
-    bottom: -16px;
+    bottom: -20px;
     left: -20px;
     z-index: 1;
     width: 50%;
@@ -203,7 +208,7 @@ import ContactIcons from '../../utils/ContactIcons.astro';
     z-index: 3;
     width: 50%;
     height: 50%;
-    top: -21px;
+    top: -22px;
     right: -22px;
     box-sizing: border-box;
   }
@@ -245,12 +250,12 @@ import ContactIcons from '../../utils/ContactIcons.astro';
     }
     .block::after {
       top: -21%;
-    height: 748px;
-    left: 28%;
+      height: 748px;
+      left: 32%;
     }
     .hero-section {
       background-color: transparent;
-      
+
       mask-image: radial-gradient(
         circle,
         rgba(0, 0, 0, 1) 70%,
@@ -280,7 +285,6 @@ import ContactIcons from '../../utils/ContactIcons.astro';
     }
     .hero-heading {
       display: block;
-      /* font-size: 5rem; */
       max-width: 100%;
       line-height: 83px;
     }
@@ -324,6 +328,17 @@ import ContactIcons from '../../utils/ContactIcons.astro';
   @keyframes typewriter {
     to {
       left: 100%;
+    }
+  }
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  @keyframes disappear {
+    to {
+      opacity: 0;
     }
   }
 
