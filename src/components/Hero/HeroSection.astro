@@ -29,13 +29,12 @@ import ContactIcons from '../../utils/ContactIcons.astro';
         />
       </div>
     </div>
-    <button class='btn-hero'
-      ><a
-        class='btn-hero--link'
-        aria-label='link to contact list'
-        href='#contact'>Hire me</a
-      >
-    </button>
+    <a
+      aria-label='link to contact list'
+      href='#contact'
+      class='btn-hero'
+      >Hire me
+    </a>
     <div class='hero-line'></div>
     <ContactIcons class='test2' />
   </div>
@@ -99,26 +98,24 @@ import ContactIcons from '../../utils/ContactIcons.astro';
   .btn-hero {
     display: block;
     margin: 100px auto 40px auto;
-    position: relative;
     width: 78%;
-    z-index: 100;
-    font-weight: 900;
+    font-weight: 700;
     cursor: pointer;
     padding: 10px 40px;
     border-radius: 15px;
     background-color: var(--green);
     border: none;
+    text-align: center;
+    text-decoration: none;
+    font-family: var(--second-font);
+    font-size: 1.5rem;
+    color: var(--bg-black);
     transition: 0.3s background-color ease-in-out;
   }
   .btn-hero:hover {
     background-color: var(--wh);
   }
-  .btn-hero--link {
-    text-decoration: none;
-    font-family: var(--second-font);
-    font-size: 1.5rem;
-    color: var(--bg-black);
-  }
+  
   .hero-heading {
     font-family: var(--main-font);
     font-weight: 900;
@@ -138,13 +135,11 @@ import ContactIcons from '../../utils/ContactIcons.astro';
     bottom: 0;
     left: 0;
   }
-
   .hero-heading::before {
     background: rgb(26, 28, 32);
     animation: typewriter var(--typewriterSpeed)
       steps(var(--typewriterCharacters)) 1s forwards;
   }
-
   .hero-heading::after {
     width: 0.125em;
     background: rgb(6, 196, 116);
@@ -168,7 +163,7 @@ import ContactIcons from '../../utils/ContactIcons.astro';
     font-family: var(--second-font);
     opacity: 0;
     transform: translateY(3rem);
-    animation: fadeInUp 1s ease calc(var(--typewriterSpeed) + 2s) forwards;
+    animation: fadeInUp 1s ease calc(var(--typewriterSpeed) + 1s) forwards;
   }
   .hero-container {
   }
