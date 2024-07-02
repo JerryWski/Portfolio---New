@@ -1,0 +1,88 @@
+<div class='bg-music'>
+  <svg
+    class='speaker-img'
+    xmlns='http://www.w3.org/2000/svg'
+    width='24'
+    height='24'
+    viewBox='0 0 24 24'
+    fill='var(--green)'
+    stroke='black'
+    stroke-width='2'
+    stroke-linecap='round'
+    stroke-linejoin='round'
+    class='feather feather-speaker'
+  >
+    <rect x='4' y='2' width='16' height='20' rx='2' ry='2'></rect>
+    <circle cx='12' cy='14' r='4'></circle>
+    <line x1='12' y1='6' x2='12.01' y2='6'></line>
+  </svg>
+  <!-- <img class="speaker-img" src="./src/img/speaker.svg" alt="" /> -->
+  <audio class='audio'>
+    <source src='./src/audio/bg-music2.mp3' type='audio/mp3' />
+  </audio>
+  <button class='play-button'>
+    Music <span class='music-on-off'>ON</span>
+  </button>
+</div>
+
+<style>
+  .bg-music {
+    top: 115px;
+    right: 45px;
+    left: auto;
+    position: fixed;
+    border-radius: 5px;
+    border: 1px solid var(--wh);
+    background-color: transparent;
+    display: flex;
+    height: fit-content;
+    z-index: 1000;
+    padding: 5px;
+  }
+  .music-on-off {
+    color: var(--green);
+  }
+  .play-button {
+    font-size: 1rem;
+    letter-spacing: 1px;
+    font-weight: 700;
+    color: var(--green);
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+  }
+</style>
+
+<script>
+  const audio = document.querySelector('.audio') as HTMLAudioElement | null;
+  const playPauseBtn = document.querySelector(
+    '.play-button',
+  ) as HTMLButtonElement | null;
+  const musicOnOff = document.querySelector(
+    '.music-on-off',
+  ) as HTMLDivElement | null;
+  const speakerImg = document.querySelector('.speaker-img');
+
+  let count = 0;
+
+  const playPause = () => {
+    if (audio && musicOnOff && speakerImg) {
+      if (count == 0) {
+        count = 1;
+        audio.play();
+        musicOnOff.innerHTML = 'OFF';
+        musicOnOff.style.color = 'hsl(342, 98%, 53%)';
+        speakerImg.setAttribute('fill', 'hsl(342, 98%, 53%)');
+      } else {
+        count = 0;
+        audio.pause();
+        musicOnOff.innerHTML = 'ON';
+        musicOnOff.style.color = 'var(--green)';
+        speakerImg.setAttribute('fill', 'var(--green)');
+      }
+    }
+  };
+  if (playPauseBtn) {
+    playPauseBtn.addEventListener('click', playPause);
+  }
+</script>
