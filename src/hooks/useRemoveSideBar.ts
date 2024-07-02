@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 
 
-const removeSideBar = (callback: () => void, threshold: number = 900) => {
+const useRemoveSideBar = (callback: () => void, threshold: number = 900) => {
 
 useEffect(() => {
     const handleResize = () => {
@@ -21,6 +21,6 @@ useEffect(() => {
 
 }
 
-export default removeSideBar;
+export default useRemoveSideBar;
 
 

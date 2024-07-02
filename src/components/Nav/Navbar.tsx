@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import Hamburger from './Hamburger';
-import removeSideBar from '../../hooks/removeSideBar';
+import useRemoveSideBar from '../../hooks/useRemoveSideBar';
 import './Navbar.css';
 
 const Navbar: React.FC = () => {
@@ -28,7 +28,7 @@ const Navbar: React.FC = () => {
     };
   }, []);
 
-  removeSideBar(() => setIsActive(false));
+  useRemoveSideBar(() => setIsActive(false));
 
   return (
     <>
