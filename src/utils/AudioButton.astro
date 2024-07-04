@@ -85,39 +85,26 @@
 </style>
 
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const audio = document.querySelector('.audio') as HTMLAudioElement | null;
-    const musicElement = document.querySelector('.music');
-    const lines = document.querySelectorAll('.music .line');
+  const audio = document.querySelector('.audio') as HTMLAudioElement | null;
+  const musicElement = document.querySelector('.music');
+  const lines = document.querySelectorAll('.music .line');
 
-    let isPlaying = false;
+  let isPlaying = false;
 
-    const playPause = () => {
-      if (audio) {
-        if (isPlaying) {
-          audio.pause();
-          lines.forEach((line) => line.classList.remove('on'));
-        } else {
-          audio.play();
-          lines.forEach((line) => line.classList.add('on'));
-        }
-        isPlaying = !isPlaying;
-      }
-    };
-
+  const playPause = () => {
     if (audio) {
-      audio.loop = true;
-      audio.addEventListener('ended', () => {
-        audio.currentTime = 0;
+      if (isPlaying) {
+        audio.pause();
+        lines.forEach(line => line.classList.remove('on'));
+      } else {
         audio.play();
-      });
-      audio.play();
-      lines.forEach((line) => line.classList.add('on'));
-      isPlaying = true;
+        lines.forEach(line => line.classList.add('on'));
+      }
+      isPlaying = !isPlaying;
     }
+  };
 
-    if (musicElement) {
-      musicElement.addEventListener('click', playPause);
-    }
-  });
+  if (musicElement) {
+    musicElement.addEventListener('click', playPause);
+  }
 </script>
