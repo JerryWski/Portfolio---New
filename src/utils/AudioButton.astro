@@ -16,36 +16,59 @@
     background: url('/music-box.png');
     background-size: auto;
     background-size: 100% 100%;
-    width: 3rem;
-    height: 3rem;
+    width: 2rem;
+    height: 2rem;
     position: absolute;
-    right: 3.66rem;
-    top: 0;
+    right: 6.66rem;
+    top: -3.5rem;
     z-index: 9;
     cursor: pointer;
   }
   .music .line {
     position: absolute;
-    bottom: 1rem;
-    width: 0.2rem;
-    height: 0.9rem;
-    background:var(--green);
+    bottom: 0.6rem;
+    width: 0.1rem;
+    height: 0.8rem;
+    background: var(--green);
   }
   .music .line.line1 {
-    height: 1.4rem;
-    left: 1.5rem;
+    height: 1rem;
+    left: 1rem;
     animation-delay: 0.8s;
   }
   .music .line.line2 {
-    left: 0.78rem;
+    left: 0.48rem;
   }
   .music .line.line3 {
     height: 0.5rem;
-    left: 2.2rem;
+    left: 1.5rem;
     animation-delay: 1.2s;
   }
   .on {
     animation: musicline linear 1.5s infinite;
+  }
+  @media (min-width: 900px) {
+    .music {
+      width: 3rem;
+      height: 3rem;
+      right: 3.66rem;
+      top: 0;
+    }
+    .music .line {
+      bottom: 0.8rem;
+      width: 0.2rem;
+      
+    }
+    .music .line.line1 {
+      height: 1.4rem;
+      left: 1.4rem;
+    }
+    .music .line.line2 {
+      left: 0.58rem;
+    }
+    .music .line.line3 {
+      left: 2.2rem;
+    }
   }
 
   @keyframes musicline {
@@ -62,27 +85,39 @@
 </style>
 
 <script>
-  const audio = document.querySelector('.audio') as HTMLAudioElement | null;
-  const musicElement = document.querySelector('.music');
-  const lines = document.querySelectorAll('.music .line');
+  document.addEventListener('DOMContentLoaded', () => {
+    const audio = document.querySelector('.audio') as HTMLAudioElement | null;
+    const musicElement = document.querySelector('.music');
+    const lines = document.querySelectorAll('.music .line');
 
-  let isPlaying = false;
+    let isPlaying = false;
 
-  const playPause = () => {
-    if (audio) {
-      if (isPlaying) {
-        audio.pause();
-        lines.forEach(line => line.classList.remove('on'));
-      } else {
-        audio.play();
-        lines.forEach(line => line.classList.add('on'));
+    const playPause = () => {
+      if (audio) {
+        if (isPlaying) {
+          audio.pause();
+          lines.forEach((line) => line.classList.remove('on'));
+        } else {
+          audio.play();
+          lines.forEach((line) => line.classList.add('on'));
+        }
+        isPlaying = !isPlaying;
       }
-      isPlaying = !isPlaying;
+    };
+
+    if (audio) {
+      audio.loop = true;
+      audio.addEventListener('ended', () => {
+        audio.currentTime = 0;
+        audio.play();
+      });
+      audio.play();
+      lines.forEach((line) => line.classList.add('on'));
+      isPlaying = true;
     }
-  };
 
-  if (musicElement) {
-    musicElement.addEventListener('click', playPause);
-  }
+    if (musicElement) {
+      musicElement.addEventListener('click', playPause);
+    }
+  });
 </script>
-
