@@ -53,7 +53,7 @@ const Navbar: React.FC = () => {
             <a onClick={handleLinkClick} href='/'>Home</a>
           </li>
           <li className='nav-list_item'>
-            <a onClick={handleLinkClick} href='/#about'>_o mnie</a>
+            <a onClick={handleLinkClick} href='/#about'>_About</a>
           </li>
           <li className='nav-list_item'>
             <a onClick={handleLinkClick} href='/#skills'>_skills</a>
