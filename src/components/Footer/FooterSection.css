@@ -11,7 +11,7 @@
   flex-direction: column;
   margin-top: 40px;
   width: 100%;
-  border-top: 2px solid var(--grey-font);
+  /* border-top: 2px solid var(--grey-font); */
 }
 .footer_link {
   color: var(--green);
