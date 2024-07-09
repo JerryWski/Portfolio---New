@@ -104,6 +104,15 @@
     }
   };
 
+  // Autoplay on page load
+  window.addEventListener('load', () => {
+    if (audio) {
+      audio.play();
+      lines.forEach(line => line.classList.add('on'));
+      isPlaying = true;
+    }
+  });
+
   if (musicElement) {
     musicElement.addEventListener('click', playPause);
   }
