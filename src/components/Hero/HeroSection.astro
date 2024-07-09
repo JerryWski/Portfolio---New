@@ -102,7 +102,7 @@ import AudioButton from '../../utils/AudioButton.astro';
     cursor: pointer;
     padding: 10px 40px;
     border-radius: 15px;
-    background-color: var(--green);
+    background-color: var(--wh);
     border: none;
     text-align: center;
     text-decoration: none;
@@ -112,7 +112,7 @@ import AudioButton from '../../utils/AudioButton.astro';
     transition: 0.3s background-color ease-in-out;
   }
   .btn-hero:hover {
-    background-color: var(--wh);
+    background-color: var(--green);
   }
 
   .hero-heading {
@@ -164,48 +164,57 @@ import AudioButton from '../../utils/AudioButton.astro';
     transform: translateY(3rem);
     animation: fadeInUp 1s ease calc(var(--typewriterSpeed) + 1s) forwards;
   }
-  .hero-container {
+  .hero-image {
+    position: relative;
+    z-index: 2;
+    height: auto;
+    border: 0;
+    border-radius: 0px;
+    border-bottom-left-radius: 7px;
+    border-top-right-radius: 7px;
+    width: 100%;
+    overflow: hidden;
+    object-fit: contain;
   }
   .hero-image--wrapper {
     max-width: 200px;
     position: relative;
     margin-top: 40px;
+    
   }
-  .hero-image {
-    position: relative;
-    z-index: 2;
-    height: auto;
-    border-radius: 7px;
-    border-bottom-left-radius: 0px;
-    border-top-right-radius: 0px;
-    width: 100%;
-    overflow: hidden;
-    object-fit: contain;
+
+  .hero-image--wrapper:hover {
+    --y: -10;
+    --border-scale: 1;
   }
-  .hero-image--wrapper::after {
+
+  .hero-image--wrapper:before {
     content: '';
     position: absolute;
-    bottom: -18px;
-    left: -21px;
-    z-index: 1;
-    width: 50%;
-    height: 50%;
-    border-left: 22px solid var(--grey-font);
-    border-bottom: 22px solid var(--green);
-    box-sizing: border-box;
+    inset: calc(0.7rem * -2);
+    border: 0.7rem solid var(--green);
+    transform: scale(var(--border-scale, 0));
+    transition: transform 0.155s;
+    --angle-one: 156deg;
+    --angle-two: 321deg;
+    --spread-one: 60deg;
+    --spread-two: 60deg;
+    --start-one: calc(var(--angle-one) - (var(--spread-one) * 0.5));
+    --start-two: calc(var(--angle-two) - (var(--spread-two) * 0.8));
+    --end-one: calc(var(--angle-one) + (var(--spread-one) * 0.7));
+    --end-two: calc(var(--angle-two) + (var(--spread-two) * 0.4));
+    mask: conic-gradient(
+      transparent 0 var(--start-one),
+      white var(--start-one) var(--end-one),
+      transparent var(--end-one) var(--start-two),
+      white var(--start-two) var(--end-two),
+      transparent var(--end-two)
+    );
+    z-index: -1;
+    animation: borderAnimation 1s ease calc(var(--typewriterSpeed) + 1s)
+      forwards;
   }
-  .hero-image--wrapper::before {
-    border-right: 22px solid var(--grey-font);
-    border-top: 22px solid var(--green);
-    content: '';
-    position: absolute;
-    z-index: 3;
-    width: 50%;
-    height: 50%;
-    top: -22px;
-    right: -22px;
-    box-sizing: border-box;
-  }
+
   .hero-line {
     max-width: 1440px;
     height: 2px;
@@ -333,6 +342,11 @@ import AudioButton from '../../utils/AudioButton.astro';
   @keyframes disappear {
     to {
       opacity: 0;
+    }
+  }
+  @keyframes borderAnimation {
+    to {
+      transform: scale(1);
     }
   }
 
