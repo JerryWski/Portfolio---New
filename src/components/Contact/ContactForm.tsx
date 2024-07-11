@@ -43,7 +43,7 @@ const ContactForm = () => {
         )
         .then(
           (result) => {
-            console.log(result.text);
+            // console.log(result.text);
             reset({ username: '', email: '' });
             setValues({ ...values, textareaValue: '' });
             setIsMessageSent(true);
