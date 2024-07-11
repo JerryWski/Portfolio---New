@@ -2,6 +2,7 @@ import './ContactForm.css';
 import emailjs from '@emailjs/browser';
 import { useRef, useState } from 'react';
 import { useForm, type SubmitHandler } from 'react-hook-form';
+import ReCAPTCHA from 'react-google-recaptcha';
 
 interface FormValues {
   username: string;
@@ -20,8 +21,10 @@ const ContactForm = () => {
 
   const [isMessageSent, setIsMessageSent] = useState(false);
   const [isSending, setIsSending] = useState(false);
+  const [recaptchaValue, setRecaptchaValue] = useState<string | null>(null);
 
   const form = useRef<HTMLFormElement>(null);
+  const recaptchaRef = useRef<ReCAPTCHA>(null);
   const [values, setValues] = useState<FormValues>({
     username: '',
     email: '',
@@ -61,6 +64,11 @@ const ContactForm = () => {
     const { name, value } = e.target;
     setValues({ ...values, [name]: value });
   };
+
+  const onRecaptchaChange = (value: string | null) => {
+    setRecaptchaValue(value);
+  };
+
 
   return (
     <>
@@ -123,6 +131,11 @@ const ContactForm = () => {
               value={values.textareaValue}
               onChange={handleTextAreaChange}
             ></textarea>
+            <ReCAPTCHA
+              ref={recaptchaRef}
+              sitekey="6LfC4w0qAAAAAGH_kXUGOdDnMXWT44erb7kXQiTs"
+              onChange={onRecaptchaChange}
+            />
             <button disabled={isSubmitting} className='form-btn' type='submit'>
               {isSubmitting || isSending ? (
                 <span className='spinner'></span>
