@@ -15,8 +15,12 @@ const { title = 'Web Developer - Jerry_Wski - Tworzenie Stron WWW' } =
     <meta name='description' content=' Profesjonalne tworzenie stron WWW' />
     <meta name='viewport' content='width=device-width' />
     <link rel='icon' type='image/svg+xml' href='/icon.webp' />
-    <meta name="google-site-verification" content="HACqCTXLiNnYYtIFkLAXXdw9af_x1iAejtBeFanDWOA" />
+    <meta
+      name='google-site-verification'
+      content='HACqCTXLiNnYYtIFkLAXXdw9af_x1iAejtBeFanDWOA'
+    />
     <meta name='generator' content={Astro.generator} />
+    <script src='https://www.google.com/recaptcha/api.js' async defer></script>
     <title>{title}</title>
   </head>
   <body>
@@ -32,10 +36,10 @@ const { title = 'Web Developer - Jerry_Wski - Tworzenie Stron WWW' } =
     --grey-font: #495551;
     --light-grey: hsl(156, 4%, 50.6%);
     --green: rgb(30, 169, 90);
-    --main-font: "Orbitron", 'sans-serif';
+    --main-font: 'Orbitron', 'sans-serif';
     --second-font: 'Anonymous Pro', 'sans-serif';
     --x: 0;
-    --y:0;
+    --y: 0;
     --typewriterSpeed: 2.5s;
     --typewriterCharacters: 26;
   }
@@ -57,6 +61,4 @@ const { title = 'Web Developer - Jerry_Wski - Tworzenie Stron WWW' } =
   .sticky-body {
     overflow: hidden;
   }
-
-  
 </style>
