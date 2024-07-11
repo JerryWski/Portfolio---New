@@ -123,11 +123,6 @@ const ContactForm = () => {
               value={values.textareaValue}
               onChange={handleTextAreaChange}
             ></textarea>
-            <div
-              className='g-recaptcha'
-              data-sitekey='6LfC4w0qAAAAAGH_kXUGOdDnMXWT44erb7kXQiTs'
-            ></div>
-
             <button disabled={isSubmitting} className='form-btn' type='submit'>
               {isSubmitting || isSending ? (
                 <span className='spinner'></span>
