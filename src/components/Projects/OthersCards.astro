@@ -126,12 +126,12 @@ import app4 from '../../assets/app4.webp';
     grid-row: span 4;
     gap: 0px;
     opacity: 0;
-    transform: translateY(-200px) scale(.3);
-    transition: transform 0.6s, opacity 0.6s;
+    transform: translateY(100px);
+    transition: transform 0.7s, opacity 0.6s;
   }
   .others-wrapper.visible {
     opacity: 1;
-    transform: translateY(0) scale(1);
+    transform: translateY(0);
   }
   .other {
     box-shadow: 0px 8px 17px -10px rgba(177, 182, 177, 1);
@@ -192,11 +192,9 @@ import app4 from '../../assets/app4.webp';
 
   const observerOptions = {
     root: null,
-    rootMargin: '-100px',
-    threshold: 0.2
+    rootMargin: '0px',
+    threshold: .3
   };
-
- 
 
   const observer = new IntersectionObserver((entries, observer) => {
       entries.forEach((entry) => {
