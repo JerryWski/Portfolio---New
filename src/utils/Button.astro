@@ -2,9 +2,9 @@
 
 ---
 
-<button class='btn'
-  ><a class='btn-link' aria-label='link to contact list' href='#contact'>Hire me</a>
-</button>
+<a class='btn-link' aria-label='link to contact list' href='#contact'>
+  <button class='btn'>Hire me </button>
+</a>
 
 <style>
   .btn {
@@ -13,6 +13,9 @@
     cursor: pointer;
     padding: 20px 80px;
     border-radius: 15px;
+    font-family: var(--second-font);
+    font-size: 2rem;
+    color: var(--bg-black);
     background-color: var(--green);
     border: none;
     transition: 0.3s background-color ease-in-out;
@@ -22,12 +25,8 @@
   }
   .btn-link {
     text-decoration: none;
-    font-family: var(--second-font);
-    font-size: 2rem;
-    color: var(--bg-black);
   }
   @media (min-width: 900px) {
-    
     .btn {
       display: block;
     }
