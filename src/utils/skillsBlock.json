@@ -14,6 +14,10 @@
       {
         "name": "WordPress",
         "icon": "wp"
+      },
+      {
+        "name":"Express JS",
+        "icon": "express"
       }
     ]
   },
@@ -48,6 +52,10 @@
       {
         "name": "Python",
         "icon": "python2"
+      },
+      {
+        "name": "NodeJS",
+        "icon":"nodejs"
       }
     ]
   },

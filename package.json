@@ -16,7 +16,7 @@
     "@types/react": "^18.3.2",
     "@types/react-dom": "^18.3.0",
     "astro": "^4.8.7",
-    "astro-icon": "^1.1.0",
+    "astro-icon": "^1.1.1",
     "framer-motion": "^11.2.12",
     "lottie-react": "^2.4.0",
     "react": "^18.3.1",
