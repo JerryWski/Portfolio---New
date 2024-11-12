@@ -3,13 +3,14 @@ import Navbar from '../components/Nav/Navbar';
 import Layout from '../layouts/Layout.astro';
 import { Image } from 'astro:assets';
 import logo from '../assets/my-logo.png';
-import logo2 from '../assets/logo-wh-2.webp';
 import HeroSection from '../components/Hero/HeroSection.astro';
 import AboutSection from '../components/About/AboutSection.astro';
 import ProjectSection from '../components/Projects/ProjectSection.astro';
 import SkillSection from '../components/Skills/SkillSection.astro';
 import ContactSection from '../components/Contact/ContactSection.astro';
 import ScrollToTopBtn from '../utils/ScrollToTopBtn.astro';
+import { Icon } from 'astro-icon/components';
+
 ---
 
 <Layout title='Web Developer - Jerry_Wski - Tworzenie Stron WWW'>
@@ -19,7 +20,7 @@ import ScrollToTopBtn from '../utils/ScrollToTopBtn.astro';
         <Image class='logo-img desk' src={logo} alt='logo' loading={'eager'} />
       </a>
       <a aria-label="link to home page" href="/">
-        <Image class='logo-img small' src={logo2} alt='logo' loading={'eager'} />
+        <Icon name="logo-svg" class='logo-img small'/>
       </a>
       <Navbar client:only='react' />
     </div>
@@ -35,6 +36,26 @@ import ScrollToTopBtn from '../utils/ScrollToTopBtn.astro';
 </Layout>
 
 <style>
+  .logo-svg{
+    fill: transparent;
+    stroke: #ffff;
+    stroke-width: 0.5;
+    stroke-dasharray: 655;
+    stroke-dashoffset: 655;
+    animation: textAnimation 4s ease-in-out 1 forwards;
+  }
+  @keyframes textAnimation {
+    0%{
+      stroke-dashoffset: 655;
+    }
+    80%{
+      fill: transparent;
+    }
+    100%{
+      fill: #ffff;
+      stroke-dashoffset: 0;
+    }
+  }
   header {
     background-color: var(--bg-graff);
     height: 90px;
@@ -48,8 +69,8 @@ import ScrollToTopBtn from '../utils/ScrollToTopBtn.astro';
   .logo-img.small {
     position: relative;
     z-index: 100;
-    max-width: 80px;
-    height: 80px;
+    max-width: 120px;
+    height: 100px;
     padding: 10px;
   }
   .logo-img.desk {
@@ -78,4 +99,6 @@ import ScrollToTopBtn from '../utils/ScrollToTopBtn.astro';
       display: none;
     }
   }
+
+ 
 </style>
