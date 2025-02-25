@@ -6,6 +6,7 @@ import card3 from '../../assets/card3.webp';
 import card4 from '../../assets/card4.webp';
 import card5 from '../../assets/card5.webp';
 import card6 from '../../assets/card6.webp';
+import card7 from '../../assets/card7.webp';
 import Cta from '../../utils/Cta.astro';
 ---
 
@@ -107,7 +108,7 @@ import Cta from '../../utils/Cta.astro';
         loading={'eager'}
         class='card-img'
         src={card6}
-        alt='landing page of speech therapist website'
+        alt='landing-page-of-speech-therapist-website'
       />
     </div>
     <h3 class='card-text'>
@@ -117,6 +118,27 @@ import Cta from '../../utils/Cta.astro';
       >
     </h3>
   </div>
+
+  <div class='cards-wrapper'>
+    <p class='card-overtext'>Astro / React / Typescript</p>
+    <div class='card seven'>
+      <Image
+        loading={'eager'}
+        class='card-img'
+        src={card7}
+        alt='landing-page-of-cyber-security-website'
+      />
+    </div>
+    <h3 class='card-text'>
+      A website for a cyber security company. Project design by Kreatika Studio<a
+        aria-label='link to zenith site'
+        href='https://security-zenith.com/'>Security Zenith</a
+      >
+    </h3>
+  </div>
+
+
+
   <Cta />
 </div>
 
@@ -178,6 +200,9 @@ import Cta from '../../utils/Cta.astro';
   }
   .card.six {
     background-color: rgb(240, 185, 226);
+  }
+  .card.seven {
+    background-color: rgb(34 217 109);
   }
 
   .card-img {
